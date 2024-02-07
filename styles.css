@@ -58,9 +58,11 @@ main {
     }
 
     .comic img {
+        max-width: 100%;
         width: 500px;
         display: block;
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .epmain {
