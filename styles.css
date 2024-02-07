@@ -16,7 +16,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    min-width: 100%;
     background-image: url("but/Background.png"); 
     background-size: 400px;
     background-repeat: repeat;
