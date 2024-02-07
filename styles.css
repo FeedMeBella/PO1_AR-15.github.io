@@ -85,9 +85,9 @@ footer {
 
 
 .titlebody {
-    height: 100vh;
-    text-align: center;
-    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .oneline {
@@ -97,12 +97,21 @@ footer {
     width: 80%;
 }
 
-.twoline, .threeline {
+.twoline {
     display: inline-flex;
     width: 40%;
     margin-left: auto;
     margin-right: auto;
 }
+
+.threeline {
+    display: inline-flex;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+    
 
 .twoline img, .threeline img  {
     width: 100%;
