@@ -79,6 +79,11 @@ footer {
     width: 100%;
 }
 
+footer p {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
     .link {
         color: rgb(255, 190, 111);
     }
