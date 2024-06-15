@@ -21,15 +21,16 @@
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 100vh;
 }
 
 .image-container {
-            position: absolute;
-            height: 100vh; /* Full viewport height */
-            overflow-x: auto; /* Enable horizontal scrolling */
-            display: flex;
-            overflow-y: hidden; /* Hide overflow to prevent vertical scroll */
+            position: relative;
+            height: 100vh;
+            width: auto;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
         }
 
         .image-container img {
