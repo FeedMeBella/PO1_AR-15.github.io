@@ -154,7 +154,7 @@ footer p {
 
 .image-container {
             position: absolute;
-            height: 100vh;
+            height: 100%;
             width: auto;
             white-space: nowrap;
             overflow-x: auto;
