@@ -18,11 +18,18 @@
    <link rel="icon" href="but/Vic Char sheetAF2.jpg" type="image/x-icon"/>
     <style>
        
-        
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent vertical scrolling */
+}
 
 .image-container {
-            position: relative;
+            position: absolute;
             height: 100vh; /* Full viewport height */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            display: flex;
             overflow-y: hidden; /* Hide overflow to prevent vertical scroll */
         }
 
