@@ -41,7 +41,9 @@ header {
     background: linear-gradient(#af1616 65%, transparent);
     text-align: center;
     padding: 0px;
-    width: 100%;
+    width: auto;
+    position: fixed;
+    
 }
     nav li {
         display: inline-block;
