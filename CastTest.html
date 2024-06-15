@@ -50,16 +50,6 @@
         window.addEventListener('load', centerImage);
         window.addEventListener('resize', centerImage);
 
-        <script>
-        function centerImage() {
-            const imgContainer = document.querySelector('.image-container');
-            const img = imgContainer.querySelector('img');
-            imgContainer.scrollLeft = (img.offsetWidth - window.innerWidth) / 2;
-        }
-
-        window.addEventListener('load', centerImage);
-        window.addEventListener('resize', centerImage);
-
         function adjustImageContainer() {
             const header = document.querySelector('header');
             const imgContainer = document.querySelector('.image-container');
@@ -74,7 +64,6 @@
 
         window.addEventListener('load', adjustImageContainer);
         window.addEventListener('resize', adjustImageContainer);
-    </script>
     </script>
 
     
