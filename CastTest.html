@@ -49,6 +49,21 @@
 
         window.addEventListener('load', centerImage);
         window.addEventListener('resize', centerImage);
+
+        function adjustImageContainer() {
+            const header = document.querySelector('header');
+            const imgContainer = document.querySelector('.image-container');
+            const img = imgContainer.querySelector('img');
+            const headerHeight = header.offsetHeight;
+
+            imgContainer.style.top = headerHeight + 'px';
+            imgContainer.style.height = `calc(100vh - ${headerHeight}px)`;
+
+            imgContainer.scrollLeft = (img.offsetWidth - window.innerWidth) / 2;
+        }
+
+         window.addEventListener('load', adjustImageContainer);
+         window.addEventListener('resize', adjustImageContainer);
     </script>
 
     
