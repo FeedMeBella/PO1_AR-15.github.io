@@ -33,30 +33,92 @@ header {
     padding: 0px;
     width: 100%;
 }
+    nav li {
+        display: inline-block;
+        margin-right: 30px;
+        vertical-align: middle; 
+        list-style-type: none;
+    }
 
-main {
-    padding: 0px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-nav li {
-    display: inline-block;
-    margin-right: 30px;
-    vertical-align: middle;
-    list-style-type: none;
-}
-
-.listeps {
+    .listeps {
         margin-left: 30px;
     }
 
+    .comic{
+        text-align: center;
+    }
 
-.link {
+    .comic img {
+        max-width: 100%;
+        width: 500px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .epmain {
+        padding: 0px;
+        margin-top: 20px;
+        margin-left: 0px;
+        margin-right: 0px;
+        flex: 1;
+        text-align: center;
+    }
+
+footer {
+    background: linear-gradient(transparent,#af1616);
+    font-family: "VA-11 Hall-A 6px Non-mono";
     color: rgb(255, 190, 111);
+    text-align: center;
+    padding: 0px;
+    line-height: 70%;
+    width: 100%;
 }
 
+footer p {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    .link {
+        color: rgb(255, 190, 111);
+    }
+
+
+
+
+.titlebody {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.oneline {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    width: 80%;
+}
+
+.twoline {
+    display: inline-flex;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.threeline {
+    display: inline-flex;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+    
+
+.twoline img, .threeline img  {
+    width: 100%;
+}
 
 .twoimgs {
   position: relative;
@@ -80,34 +142,3 @@ nav li {
     opacity: 1;
   }
 
-.image-container {
-            position: relative;
-            height: 100vh;
-            width: auto;
-            white-space: nowrap;
-            overflow-x: auto;
-            overflow-y: hidden;
-            alignment: center;
-        }
-
-        .image-container img {
-            display: block;
-            width: auto; /* Make the image fill the container horizontally */
-            height: 100%; /* Maintain aspect ratio */
-            object-fit: fill; /* Cover the entire container, cropping if necessary */
-            alignment: center;
-        }
-
-.info-button {
-    position: absolute;
-    display: inline-block;
-    width: 8%;
-    height: 60%;
-    background-color: rgba(255, 0, 0, 0.5); /* Semi-transparent red for demo */
-    border-radius: 50%; /* Round shape */
-    cursor: pointer;
-}
-
-.info-button:hover {
-    background-color: rgba(255, 0, 0, 0.8); /* Darker red on hover */
-}
