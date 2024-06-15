@@ -50,6 +50,28 @@ nav li {
     list-style-type: none;
 }
 
+.twoimgs {
+  position: relative;
+}
+
+.img1 {
+  position: relative;
+}
+
+.img2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.img2:hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+  }
+
 .image-container {
     position: absolute;
     top: 0;
