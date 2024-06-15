@@ -152,15 +152,18 @@ footer p {
   }
 
 .image-container {
-    position: relative;
+    position: absolute;
+    height: 100%; width: 100%;
     display: inline-block;
     }
+
 .character-button {
     position: absolute;
     background: none;
     border: none;
     cursor: pointer;
     }
+
 .character-button img {
     display: block;
     max-width: 100%;
