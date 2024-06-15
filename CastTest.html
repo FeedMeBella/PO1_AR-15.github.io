@@ -50,21 +50,31 @@
         window.addEventListener('load', centerImage);
         window.addEventListener('resize', centerImage);
 
-       function adjustImageContainer() {
-    const header = document.querySelector('header');
-    const imgContainer = document.querySelector('.image-container');
-    const img = imgContainer.querySelector('img');
-    const headerHeight = header.offsetHeight;
+        <script>
+        function centerImage() {
+            const imgContainer = document.querySelector('.image-container');
+            const img = imgContainer.querySelector('img');
+            imgContainer.scrollLeft = (img.offsetWidth - window.innerWidth) / 2;
+        }
 
-    // Set CSS variable for header height
-    document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+        window.addEventListener('load', centerImage);
+        window.addEventListener('resize', centerImage);
 
-    // Calculate and set the initial scroll position to center the image horizontally
-    imgContainer.scrollLeft = (imgContainer.scrollWidth - imgContainer.clientWidth) / 2;
-}
+        function adjustImageContainer() {
+            const header = document.querySelector('header');
+            const imgContainer = document.querySelector('.image-container');
+            const img = imgContainer.querySelector('img');
+            const headerHeight = header.offsetHeight;
 
-window.addEventListener('load', adjustImageContainer);
-window.addEventListener('resize', adjustImageContainer);
+            imgContainer.style.top = headerHeight + 'px';
+            imgContainer.style.height = `calc(100vh - ${headerHeight}px)`;
+
+            imgContainer.scrollLeft = (img.offsetWidth - window.innerWidth) / 2;
+        }
+
+        window.addEventListener('load', adjustImageContainer);
+        window.addEventListener('resize', adjustImageContainer);
+    </script>
     </script>
 
     
