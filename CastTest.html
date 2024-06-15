@@ -36,11 +36,21 @@
             <img src="Char/Polaris Height Chart Official.jpg">
             <a href="vicbartends.com/Vic" class="info-button" style="left: 40%; top: 50%;"></a>
             <a href="vicbartends.com/Beth" class="info-button" style="left: 55%; top: 50%;"></a>
-
         </div>
             
    </main>
+
+     <script>
+        function centerImage() {
+            const imgContainer = document.querySelector('.image-container');
+            const img = imgContainer.querySelector('img');
+            imgContainer.scrollLeft = (img.offsetWidth - window.innerWidth) / 2;
+        }
+
+        window.addEventListener('load', centerImage);
+        window.addEventListener('resize', centerImage);
+    </script>
+
+    
 </body>
-
-
 </html>
