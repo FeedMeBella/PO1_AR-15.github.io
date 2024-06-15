@@ -14,19 +14,21 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-image: url("but/Background.png"); 
+    background-image: url("but/Background.png");
     background-size: 400px;
     background-repeat: repeat;
     font-family: "VA-11 Hall-A 6px Non-mono";
     color: rgb(255, 190, 111);
-    overflow-x: auto;
-    overflow-y: hidden;
-}
+    overflow: hidden; /* Hide both horizontal and vertical scrollbars on body */
 
 main {
     padding: 0;
     margin: 0;
-    height: calc(100vh - var(--header-height));
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 h1, h3 {
@@ -82,15 +84,12 @@ nav li {
   }
 
 .image-container {
-    position: absolute;
-    top: var(--header-height);
-    left: 50%;
-    transform: translateX(-50%);
-    height: calc(100vh - var(--header-height)); /* Full height minus header */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: auto; /* Enable both horizontal and vertical scroll */
+    position: relative;
+    height: calc(100vh - var(--header-height));
+    width: auto;
+    white-space: nowrap;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical scrollbar */
 }
 
 .image-container img {
