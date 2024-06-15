@@ -150,3 +150,19 @@ footer p {
     right: 0;
     opacity: 1;
   }
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    }
+.character-button {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    }
+.character-button img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    }
