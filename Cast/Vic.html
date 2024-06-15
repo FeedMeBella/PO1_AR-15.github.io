@@ -17,50 +17,36 @@
    <link rel="stylesheet" href="../styles.css">
    <link rel="icon" href="../but/Vic Char sheetAF2.jpg" type="image/x-icon"/>
    <styles>
-       .container {
+   .container {
     display: flex;
-    height: 100vh;
+    max-width: 1200px; /* Optional: Set a max-width for the container */
+    margin: 0 auto; /* Optional: Center align the container */
+    padding: 20px;
 }
 
-/* Style for the image column */
 .image-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    overflow-y: auto;
+    flex: 1; /* Take up 50% of the container width */
+}
+
+.text-column {
+    flex: 1; /* Take up 50% of the container width */
+    padding-left: 20px; /* Optional: Add some spacing between columns */
 }
 
 .image-column img {
-    width: 20%;
-    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    max-width: 100%; /* Ensure images don't exceed their container width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Optional: Add spacing between images */
 }
 
-/* Style for the text column */
-.text-column {
-    flex: 2;
-    padding: 20px;
-    overflow-y: auto;
-}
-
-.text-column h1 {
+.text-column h2 {
     margin-top: 0;
 }
 
 .text-column p {
     margin-bottom: 20px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    .image-column, .text-column {
-        flex: 1;
-        height: 50vh;
-    }
 }
    </styles>
    <title>POLARIS</title>
