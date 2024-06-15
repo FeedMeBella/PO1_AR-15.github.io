@@ -23,6 +23,39 @@
             overflow-x: hidden;
             overflow-y: hidden;
         }
+    .scroll-container {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: scroll; /* Enable horizontal scrolling */
+  }
+
+  .Vic {
+    flex-shrink: 0; /* Prevent characters from shrinking */
+    scroll-snap-align: center; /* Snap each character to the center */
+    cursor: pointer; /* Change cursor to pointer to indicate clickable area */
+  }
+
+  .Vic img {
+    width: 200px; /* Adjust width of each character */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 20px; /* Adjust spacing between characters */
+  }
+
+  .Beth {
+    flex-shrink: 0; /* Prevent characters from shrinking */
+    scroll-snap-align: center; /* Snap each character to the center */
+    cursor: pointer; /* Change cursor to pointer to indicate clickable area */
+    margin: 0 20px; /* Adjust spacing between characters */
+  }
+
+  /* Example styles for each character */
+  .Beth img {
+    width: 200px; /* Adjust width of each character */
+    height: auto; /* Maintain aspect ratio */
+  }
        
    </style>
    <link rel="icon" href="but/Vic Char sheetAF2.jpg" type="image/x-icon"/>
@@ -41,25 +74,21 @@
       </ul> </nav> 
    </header>
 
-
-    </script>
     
-        <div class="image-container">
-        <img src="Char/Polaris Height Chart Official.jpg">
+    <div class="image-container">
+     <img src="Char/Polaris Height Chart Official.jpg">
         
-       <svg class="character-button" style="top: 10%; left: 5%;" onclick="window.location.href='https://link1.com'">
-            <image xlink:href="Char/Vic.svg" width="100" height="100" />
-        </svg>
+    <div class="scroll-container">
+          <!-- Character 1 -->
+          <a href="character1.html" class="Vic">
+            <img src="Char/Vic.png">
+          </a>
         
-        <!-- Character 2 Button -->
-        <svg class="character-button" style="top: 30%; left: 20%;" onclick="window.location.href='https://link2.com'">
-            <image xlink:href="Char/Beth.svg" width="100" height="100" />
-        </svg>
-        
-        <!-- Character 3 Button -->
-        <svg class="character-button" style="top: 50%; left: 35%;" onclick="window.location.href='https://link3.com'">
-            <image xlink:href="Char/Jack.svg" width="100" height="100" />
-        </svg>
+          <!-- Character 2 -->
+          <a href="character2.html" class="Beth">
+            <img src="Char/Beth.png" alt="Character 2">
+          </a>
+
    </main>
 
 </body>
