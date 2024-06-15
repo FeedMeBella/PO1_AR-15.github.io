@@ -30,7 +30,7 @@ main {
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
-    height: 100vh;
+    height: 100%;
 }
 
 h1,h3 {
@@ -154,7 +154,6 @@ footer p {
 
 .image-container {
             position: absolute;
-            height: 100%;
             width: auto;
             white-space: nowrap;
             overflow-x: auto;
