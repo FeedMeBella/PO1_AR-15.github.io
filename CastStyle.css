@@ -142,3 +142,32 @@ footer p {
     opacity: 1;
   }
 
+.image-container {
+            position: relative;
+            height: 100vh;
+            width: auto;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            alignment: center;
+        }
+        .image-container img {
+            display: block;
+            width: auto; /* Make the image fill the container horizontally */
+            height: 100%; /* Maintain aspect ratio */
+            object-fit: fill; /* Cover the entire container, cropping if necessary */
+            alignment: center;
+        }
+.info-button {
+    position: absolute;
+    display: inline-block;
+    width: 8%;
+    height: 60%;
+    background-color: rgba(255, 0, 0, 0.5); /* Semi-transparent red for demo */
+    border-radius: 50%; /* Round shape */
+    cursor: pointer;
+}
+.info-button:hover {
+    background-color: rgba(255, 0, 0, 0.8); /* Darker red on hover */
+}
+
