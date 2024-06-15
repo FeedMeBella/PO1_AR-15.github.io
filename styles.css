@@ -151,21 +151,38 @@ footer p {
     opacity: 1;
   }
 
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 .image-container {
-    position: absolute;
-    height: 100%; width: 100%;
-    display: inline-block;
-    }
+    position: relative;
+    height: 100vh;
+    width: auto;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.image-container img {
+    height: 100%;
+    width: auto;
+}
 
 .character-button {
     position: absolute;
     background: none;
     border: none;
     cursor: pointer;
-    }
+}
 
 .character-button img {
     display: block;
     max-width: 100%;
     height: auto;
-    }
+}
