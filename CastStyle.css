@@ -153,7 +153,7 @@ footer p {
   }
 
 .image-container {
-            position: relative;
+            position: absolute;
             height: 100vh;
             width: auto;
             white-space: nowrap;
@@ -165,7 +165,6 @@ footer p {
             display: block;
             width: auto; /* Make the image fill the container horizontally */
             height: 100%; /* Maintain aspect ratio */
-            object-fit: fill; /* Cover the entire container, cropping if necessary */
             alignment: center;
         }
 .info-button {
