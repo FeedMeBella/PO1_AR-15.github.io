@@ -21,6 +21,7 @@ body {
     background-repeat: repeat;
     font-family: "VA-11 Hall-A 6px Non-mono";
     color: rgb(255, 190, 111);
+    overflow-y: hidden;
 }
 
 h1,h3 {
