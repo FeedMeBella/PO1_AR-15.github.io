@@ -26,6 +26,7 @@ body {
 main {
     padding: 0;
     margin: 0;
+    height: calc(100vh - var(--header-height));
 }
 
 h1, h3 {
@@ -82,16 +83,14 @@ nav li {
 
 .image-container {
     position: absolute;
-    top: 0;
+    top: var(--header-height);
     left: 50%;
     transform: translateX(-50%);
-    width: auto;
-    height: calc(100vh - 60px); /* Adjust this value based on your header height */
+    height: calc(100vh - var(--header-height)); /* Full height minus header */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: auto; /* Enable both horizontal and vertical scroll */
 }
 
 .image-container img {
