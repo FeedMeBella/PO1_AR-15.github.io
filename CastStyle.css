@@ -102,8 +102,8 @@ nav li {
 .info-button {
     position: relative;
     display: inline-block;
-    width: 10%;
-    height: 70%;
+    width: 8%;
+    height: 60%;
     background-color: rgba(255, 0, 0, 0.5); /* Semi-transparent red for demo */
     border-radius: 50%; /* Round shape */
     cursor: pointer;
