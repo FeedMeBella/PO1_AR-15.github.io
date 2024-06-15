@@ -24,6 +24,15 @@ body {
     overflow-y: hidden;
 }
 
+main {
+    padding: 0px;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    flex: 1;
+}
+
 h1,h3 {
     color: rgb(198, 68, 36);
 }
