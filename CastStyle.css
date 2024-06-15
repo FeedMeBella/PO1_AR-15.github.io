@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'VA-11 Hall-A 6px Non-mono';
+    src: url("font/VA-11Hall-A6pxNon-mono.eot");
+    src: url("font/VA-11Hall-A6pxNon-mono.eot") format('embedded-opentype'),
+        url("font/VA-11Hall-A6pxNon-mono.woff2") format('woff2'),
+        url("font/VA-11Hall-A6pxNon-mono.woff") format('woff'),
+        url("font/VA-11Hall-A6pxNon-mono.svg") format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("but/Background.png"); 
+    background-size: 400px;
+    background-repeat: repeat;
+    font-family: "VA-11 Hall-A 6px Non-mono";
+    color: rgb(255, 190, 111);
+}
+
+h1,h3 {
+    color: rgb(198, 68, 36);
+}
+
+header {
+    background: linear-gradient(#af1616 65%, transparent);
+    text-align: center;
+    padding: 0px;
+    width: 100%;
+}
+
+main {
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 30px;
+    vertical-align: middle;
+    list-style-type: none;
+}
+
+.link {
+    color: rgb(255, 190, 111);
+}
+
+
+.twoimgs {
+  position: relative;
+}
+
+.img1 {
+  position: relative;
+}
+
+.img2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.img2:hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+  }
+
+.image-container {
+            position: relative;
+            height: 100vh;
+            width: auto;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            alignment: center;
+        }
+
+        .image-container img {
+            display: block;
+            width: auto; /* Make the image fill the container horizontally */
+            height: 100%; /* Maintain aspect ratio */
+            object-fit: fill; /* Cover the entire container, cropping if necessary */
+            alignment: center;
+        }
+
+.info-button {
+    position: absolute;
+    display: inline-block;
+    width: 8%;
+    height: 60%;
+    background-color: rgba(255, 0, 0, 0.5); /* Semi-transparent red for demo */
+    border-radius: 50%; /* Round shape */
+    cursor: pointer;
+}
+
+.info-button:hover {
+    background-color: rgba(255, 0, 0, 0.8); /* Darker red on hover */
+}
