@@ -13,8 +13,6 @@
 body {
     margin: 0px;
     padding: 0px;
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
     background-image: url("but/Background.png"); 
     background-size: 400px;
@@ -30,7 +28,6 @@ main {
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
-    height: 100vh;
 }
 
 h1,h3 {
@@ -154,21 +151,17 @@ footer p {
   }
 
 .image-container {
-            position: absolute;
             width: auto;
             white-space: nowrap;
-            overflow-x: auto;
-            overflow-y: hidden;
             alignment: center;
         }
         .image-container img {
             display: block;
-            width: auto; /* Make the image fill the container horizontally */
-            height: 100%; /* Maintain aspect ratio */
+            width: auto;
             alignment: center;
         }
 .info-button {
-    position: absolute;
+    position: relative;
     display: inline-block;
     width: 8%;
     height: 60%;
