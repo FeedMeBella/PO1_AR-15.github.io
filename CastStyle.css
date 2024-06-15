@@ -100,7 +100,7 @@ nav li {
 }
 
 .info-button {
-    position: absolute;
+    position: relative;
     display: inline-block;
     width: 8%;
     height: 60%;
