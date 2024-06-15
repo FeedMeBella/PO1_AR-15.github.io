@@ -16,6 +16,54 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="../styles.css">
    <link rel="icon" href="../but/Vic Char sheetAF2.jpg" type="image/x-icon"/>
+   <styles>
+       .container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Style for the image column */
+.image-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #f0f0f0;
+    overflow-y: auto;
+}
+
+.image-column img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Style for the text column */
+.text-column {
+    flex: 2;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.text-column h1 {
+    margin-top: 0;
+}
+
+.text-column p {
+    margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .image-column, .text-column {
+        flex: 1;
+        height: 50vh;
+    }
+}
+   </styles>
    <title>POLARIS</title>
 </head>
 
