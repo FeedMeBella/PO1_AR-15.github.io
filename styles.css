@@ -151,34 +151,3 @@ footer p {
     opacity: 1;
   }
 
-
-
-.image-container {
-    position: relative;
-    height: 100vh;
-    width: auto;
-    white-space: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image-container img {
-    height: 100%;
-    width: auto;
-}
-
-.character-button {
-    position: absolute;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.character-button img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
