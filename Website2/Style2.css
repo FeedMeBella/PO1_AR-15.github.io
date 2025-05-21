@@ -39,7 +39,7 @@ body {
     height: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1500px) {
   .right img{
     height: 100%;
     transform: translateX(-20%);
