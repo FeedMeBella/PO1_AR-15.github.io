@@ -36,8 +36,13 @@ body, html {
 }
 
 @media (max-width: 768px) {
-  .right img {
-    transform: translateX(20%);
-    height: 100%;
+    .right img {
+        transform: translateX(20%);
+        height: 100%;
+  }
+
+    .left img {
+        transform: translateX(-20%);
+        height: 100%;
   }
 }
