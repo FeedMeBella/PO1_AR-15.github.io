@@ -38,10 +38,11 @@ body, html {
 
 @media (max-width: 1000px) {
     .right img {
-        position: fixed;
+        position: absolute;
         transform: translateX(5%);
         height: 90%;
         bottom: 0px;
+        right: 0px;
   }
 
     .left img {
