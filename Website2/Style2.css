@@ -15,7 +15,7 @@ body, html {
     height: 100vh;
 
 }
-
+    
 .left{
     position: fixed;
     left: 0px;
@@ -34,3 +34,9 @@ body, html {
 .right img{
     height: 100%;
 }
+
+@media (max-width: 768px) {
+  .right img{
+    height: 100%;
+    left: -20%;
+  }
