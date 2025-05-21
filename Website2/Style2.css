@@ -8,7 +8,6 @@ body, html {
 .right{
     position: fixed;
     right: 0px;
-    bottom: 0px;
     z-index: 2;
     overflow: hidden;
     margin: 0px;
@@ -40,6 +39,7 @@ body, html {
     .right img {
         transform: translateX(5%);
         height: 90%;
+        bottom: 0px;
   }
 
     .left img {
