@@ -37,8 +37,8 @@ body, html {
 
 @media (max-width: 1000px) {
     .right img {
-        transform: translateX(5%);
-        height: 100%;
+        transform: translateX(6%);
+        height: 90%;
   }
 
     .left img {
