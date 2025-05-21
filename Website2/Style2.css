@@ -38,6 +38,6 @@ body, html {
 @media (max-width: 800x) {
   .right img{
     height: 100%;
-    transform: translateX(+20%);
+    transform: translateX(20%);
   }
 }
