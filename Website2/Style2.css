@@ -5,6 +5,10 @@ body, html {
     padding:0;
   }
 
+body {
+  min-height: 101vh;
+}
+
 .right{
     position: fixed;
     right: 0px;
