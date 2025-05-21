@@ -1,0 +1,36 @@
+
+
+body, html {
+    margin:0;
+    padding:0;
+  }
+
+.right{
+    position: fixed;
+    right: 0px;
+    z-index: 2;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+
+}
+
+.left{
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1;
+    overflow: hidden;
+    padding: 0px;
+    height: 100vh;
+
+}
+
+.left img{
+    height: 100%;
+}
+
+.right img{
+    height: 100%;
+}
