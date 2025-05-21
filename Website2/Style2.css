@@ -33,6 +33,7 @@ body, html {
 
 .right img{
     height: 100%;
+    border: 20px solid red;
 }
 
 @media (max-width: 1000px) {
