@@ -33,18 +33,16 @@ body, html {
 
 .right img{
     height: 100%;
-    border: 20px solid red;
 }
 
 @media (max-width: 1000px) {
     .right img {
-        transform: translateX(20%);
+        transform: translateX(5%);
         height: 100%;
-        border: 20px solid red;
   }
 
     .left img {
-        transform: translateX(-20%);
+        transform: translateX(-18%);
         height: 100%;
   }
 }
