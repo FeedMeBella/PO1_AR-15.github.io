@@ -38,40 +38,41 @@ body, html {
 }
 
 
+
+
+
+
 .button {
   position: fixed;
-  left: 20%;
+  left: 19.5%;
   bottom: 5%;
-  cursor: pointer;
-  display: inline-block;
   z-index: 4;
+  cursor: pointer;
 
 }
 
 .button img {
    position: absolute;
-   width: 50%;
+   left: 0px;
+   bottom: 0px;
+   width: calc(100vh * 0.568518);
    height: auto;
+   opacity: 0.8;
     
-}
-
-.top{
-  opacity: 0.8;
-  z-index: 5;
 }
 
 .bot{
   opacity: 0;
 }
 
+.button:hover .bot{
+  opacity: 0.8;
+}
 
 .button:hover .top{
   opacity: 0;
 }
 
-.button:hover .bot{
-  opacity: 0.8;
-}
 
 
 .phone {
@@ -103,6 +104,9 @@ body, html {
   }
 }
 
+.hide{
+    display: none;
+}
 
 
 
@@ -110,7 +114,8 @@ body, html {
 
 
 
-@media (max-width: 1000px) {
+
+@media (max-width: 768px) {
     .right img {
         position: absolute;
         transform: translateX(5%);
@@ -145,5 +150,37 @@ body, html {
         height: auto;
         bottom: 0px;
     }
+
+.button {
+  position: fixed;
+  left: 0px;
+  bottom: 5%;
+  z-index: 4;
+
+}
+
+.button img {
+   position: absolute;
+   left: 0px;
+   bottom: 0px;
+   width: 100vw;
+   height: auto;
+   opacity: 0.8;
+    
+}
+
+.bot{
+  opacity: 0;
+}
+
+.button:hover .bot{
+  opacity: 0.8;
+}
+
+.button:hover .top{
+  opacity: 0;
+}
+
+
     
 }
