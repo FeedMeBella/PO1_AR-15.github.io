@@ -39,7 +39,7 @@ body, html {
 
 
 .button {
-  position: fixed;
+  position: relative;
   left: 20%;
   bottom: 5%;
   cursor: pointer;
@@ -49,7 +49,7 @@ body, html {
 }
 
 .button img {
-   position: fixed;
+   position: absolute;
    width: 50%;
    height: auto;
     
@@ -65,11 +65,11 @@ body, html {
 }
 
 
-.button:hover default{
+.button:hover .default{
   opacity: 0;
 }
 
-.button:hover pressed{
+.button:hover .pressed{
   opacity: 0.8;
 }
 
