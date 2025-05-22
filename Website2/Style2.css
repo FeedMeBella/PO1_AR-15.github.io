@@ -95,7 +95,7 @@ body, html {
 
 
 
-@media (max-aspect-ratio: 1) {
+@media (max-aspect-ratio: 0.8) {
     .right img {
         position: absolute;
         transform: translateX(5%);
