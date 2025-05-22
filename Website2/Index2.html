@@ -10,6 +10,14 @@
   window.addEventListener('load', setVh);
 </script>
 
+<script>
+  document.addEventListener('click', () => {
+    document.getElementById('menu').classList.add('move');
+  });
+</script>
+
+
+
 <html>
     <head>
         <link rel="stylesheet" href="Style2.css">
@@ -24,7 +32,7 @@
             <img src="./Images/Website_bg.png" alt="planet">
         </div>
 
-        <div class="phone">
+        <div class="phone" id="menu">
             <img src="./Images/Phone.png" alt="menu">
         </div>
 
