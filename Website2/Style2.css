@@ -90,10 +90,12 @@ body, html {
     .phone {
         position: fixed;
         height: calc(var(--vh, 1vh) * 100);
+        width: 100vw;
         z-index: 3;
         bottom: -200%;
         left: auto;
         overflow: visible;
+        animation: move 1.5s ease-out forwards;
 
     }
 
