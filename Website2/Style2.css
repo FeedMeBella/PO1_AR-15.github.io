@@ -55,21 +55,21 @@ body, html {
     
 }
 
-.default{
+.top{
   opacity: 0.8;
   z-index: 5;
 }
 
-.pressed{
+.bot{
   opacity: 0;
 }
 
 
-.button:hover .default{
+.button:hover .top{
   opacity: 0;
 }
 
-.button:hover .pressed{
+.button:hover .bot{
   opacity: 0.8;
 }
 
