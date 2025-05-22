@@ -47,7 +47,7 @@ body, html {
 }
 
 .phone.move{
-    animation: move 3s ease-out forwards;
+    animation: move 1.5s ease-out forwards;
 }
 
 .phone img {
@@ -99,7 +99,7 @@ body, html {
     }
 
     .phone.move{
-    animation: move 3s ease-out forwards;
+    animation: move 1.5s ease-out forwards;
 }
     
     .phone img {
