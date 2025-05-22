@@ -92,12 +92,15 @@ body, html {
         height: calc(var(--vh, 1vh) * 100);
         z-index: 3;
         bottom: 0px;
-        left: 0px;
         width: auto;
         text-align: center;
         overflow: visible;
-        animation: move 5s ease-out forwards;
+        animation: move 3s ease-out forwards;
     }
+
+    .phone.move{
+    animation: move 3s ease-out forwards;
+}
     
     .phone img {
         position: absolute;
