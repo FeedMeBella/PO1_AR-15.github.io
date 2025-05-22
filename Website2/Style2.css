@@ -1,5 +1,3 @@
-
-
 body, html {
     margin:0;
     padding:0;
@@ -95,27 +93,9 @@ body, html {
     bottom: 0px;
 }
 
-@keyframes move {
-  from {
-    bottom: -200%;
-  }
-  to {
-    bottom: 0px;
-  }
-}
-
-.hide{
-    display: none;
-}
 
 
-
-
-
-
-
-
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
     .right img {
         position: absolute;
         transform: translateX(5%);
@@ -137,50 +117,57 @@ body, html {
         bottom: -200%;
         left: auto;
         overflow: visible;
-        animation: move 1.5s ease-out forwards;
-
     }
 
-    .phone.move{
-    animation: move 1.5s ease-out forwards;
-}
-    
+
     .phone img {
         width: 100%;
         height: auto;
         bottom: 0px;
     }
 
-.button {
-  position: fixed;
-  left: 0px;
-  bottom: 5%;
-  z-index: 4;
+    .button {
+    position: fixed;
+    left: 0px;
+    bottom: 5%;
+    z-index: 4;
+
+    }
+
+    .button img {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100vw;
+    height: auto;
+    opacity: 0.8;
+        
+    }
+
+    .bot{
+    opacity: 0;
+    }
+
+    .button:hover .bot{
+    opacity: 0.8;
+    }
+
+    .button:hover .top{
+    opacity: 0;
+    }
 
 }
 
-.button img {
-   position: absolute;
-   left: 0px;
-   bottom: 0px;
-   width: 100vw;
-   height: auto;
-   opacity: 0.8;
-    
+
+@keyframes move {
+  from {
+    bottom: -200%;
+  }
+  to {
+    bottom: 0px;
+  }
 }
 
-.bot{
-  opacity: 0;
-}
-
-.button:hover .bot{
-  opacity: 0.8;
-}
-
-.button:hover .top{
-  opacity: 0;
-}
-
-
-    
+.hide{
+    display: none;
 }
