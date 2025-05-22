@@ -38,7 +38,7 @@ body, html {
 }
 
 .phone {
-    position: relative;
+    position: absolute;
     height: calc(var(--vh, 1vh) * 70);
     bottom: 0px;
     left: 30%;
@@ -46,9 +46,10 @@ body, html {
 }
 
 .phone img {
-    position: relative;
+    position: absolute;
     height: 100%;
     left: 0px;
+    bottom: 0px;
 }
 
 
