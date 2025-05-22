@@ -38,6 +38,7 @@ body, html {
 }
 
 .phone{
+    position: relative;
     height: calc(var(--vh, 1vh) * 70);
     bottom: 0px;
     left: 30%;
