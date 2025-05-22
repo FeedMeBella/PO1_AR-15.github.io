@@ -37,19 +37,11 @@ body, html {
     height: 100%;
 }
 
-.nophone{
-    position: fixed;
-    height: calc(var(--vh, 1vh) * 98);
-    z-index: 3;
-    bottom: -200%;
-    left: 20%;
-    width: auto;
-}
 .phone {
     position: fixed;
     height: calc(var(--vh, 1vh) * 98);
     z-index: 3;
-    bottom: 0px;
+    bottom: -200%;
     left: 20%;
     width: auto;
 }
