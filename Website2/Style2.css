@@ -37,6 +37,38 @@ body, html {
     height: 100%;
 }
 
+
+.button {
+  position: fixed;
+  left: 20%;
+  bottom: 5%;
+  cursor: pointer;
+  display: inline-block;
+
+}
+
+.button img {
+   width: 20%;
+   height: auto;
+    
+}
+
+.default{
+  opacity: 1;
+}
+
+.default:hover{
+  opacity: 0;
+}
+
+.pressed{
+  opacity: 0;
+}
+
+.pressed:hover{
+  opacity: 1;
+}
+
 .phone {
     position: fixed;
     height: calc(var(--vh, 1vh) * 98);
