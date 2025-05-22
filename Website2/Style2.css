@@ -42,7 +42,7 @@ body, html {
     height: calc(var(--vh, 1vh) * 98);
     z-index: 3;
     bottom: 0px;
-    left: 15%;
+    left: 20%;
     width: auto;
 }
 
@@ -61,27 +61,29 @@ body, html {
         height: 65%;
         bottom: 0px;
         right: 0px;
-  }
+   }
 
     .left img {
         transform: translateX(-25%);
         height: 100%;
-  }
-
+    }
+    
     .phone {
-    position: fixed;
-    height: calc(var(--vh, 1vh) * 100);
-    z-index: 3;
-    bottom: 0px;
-    left: 0px;
-    width: auto;
-}
-
-.phone img {
-    position: absolute;
-    height: 100%;
-    left: 0px;
-    bottom: 0px;
-}
+        position: fixed;
+        height: calc(var(--vh, 1vh) * 100);
+        z-index: 3;
+        bottom: 0px;
+        left: 0px;
+        width: auto;
+        text-align: center;
+    }
+    
+    .phone img {
+        position: absolute;
+        height: 100%;
+        left: 0px;
+        bottom: 0px;
+        display: inline-block;
+    }
     
 }
