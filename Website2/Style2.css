@@ -91,9 +91,8 @@ body, html {
         position: fixed;
         height: calc(var(--vh, 1vh) * 100);
         z-index: 3;
-        bottom: 0px;
+        bottom: -200%;
         left: auto;
-        text-align: center;
         overflow: visible;
 
     }
@@ -103,8 +102,8 @@ body, html {
 }
     
     .phone img {
-        height: 100%;
-        display: inline-block;
+        width: 100%;
+        bottom: 0px:
     }
     
 }
