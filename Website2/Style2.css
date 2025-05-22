@@ -95,7 +95,7 @@ body, html {
         left: 0px;
         width: auto;
         text-align: center;
-        overflow: hidden;
+        overflow: visible;
         animation: move 5s ease-out forwards;
     }
     
