@@ -57,12 +57,11 @@ body, html {
 
 .default{
   opacity: 0.8;
-  z-index: 2;
+  z-index: 5;
 }
 
 .pressed{
   opacity: 0;
-  z-index: 1;
 }
 
 
