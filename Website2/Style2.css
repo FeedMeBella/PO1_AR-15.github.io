@@ -103,10 +103,7 @@ body, html {
 }
     
     .phone img {
-        position: absolute;
         height: 100%;
-        left: 0px;
-        bottom: 0px;
         display: inline-block;
     }
     
