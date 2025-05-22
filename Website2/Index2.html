@@ -1,5 +1,31 @@
 <!DOCTYPE html>
 
+<html>
+
+  <head>
+      <link rel="stylesheet" href="Style.css">
+  </head>
+
+  <div class="right">
+      <img src="./Images/test.gif" alt="Bar">
+  </div>
+
+
+  <div class="left">
+      <img src="./Images/Website_bg.png" alt="planet">
+  </div>
+
+  <div class="button" id="button">
+      <img src="./Images/button.png" class="top" alt="Normal Button">
+      <img src="./Images/buttonpress.png" class="bot" alt="Pressed Button">
+  </div>
+
+  <div class="phone" id="menu" >
+      <img src="./Images/Phone.png" alt="menu">
+  </div>
+  
+
+
 <script>
   function setVh() {
     let vh = window.innerHeight * 0.01;
@@ -10,38 +36,14 @@
   window.addEventListener('load', setVh);
 </script>
 
+
+  
 <script>
-  document.addEventListener('click', () => {
+  document.getElementById('button').addEventListener('click', () => {
     document.getElementById('menu').classList.add('move');
+    document.getElementById('button').classList.add('hide');
   });
 </script>
 
 
-
-<html>
-    <head>
-        <link rel="stylesheet" href="Style2.css">
-    </head>
-
-        <div class="right">
-            <img src="./Images/test.gif" alt="Bar">
-        </div>
-
-
-        <div class="left">
-            <img src="./Images/Website_bg.png" alt="planet">
-        </div>
-
-        <div class="button" id="button">
-            <img src="./Images/button.png" class="top" alt="Top Button">
-            <img src="./Images/buttonpress.png" class="bot" alt="Bottom Button">
-        </div>
-
-        <div class="phone" id="menu">
-            <img src="./Images/Phone.png" alt="menu">
-        </div>
-  
-
-
- 
 </html>
