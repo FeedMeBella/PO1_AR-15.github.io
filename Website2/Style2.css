@@ -44,7 +44,10 @@ body, html {
     bottom: 0px;
     left: 20%;
     width: auto;
-    animation: move 5s ease-out forwards;
+}
+
+.phone.move{
+    animation: move 3s ease-out forwards;
 }
 
 .phone img {
@@ -56,7 +59,7 @@ body, html {
 
 @keyframes move {
   from {
-    bottom: -400%;
+    bottom: -200%;
   }
   to {
     bottom: 0px;
@@ -93,6 +96,7 @@ body, html {
         width: auto;
         text-align: center;
         overflow: hidden;
+        animation: move 5s ease-out forwards;
     }
     
     .phone img {
