@@ -49,6 +49,7 @@ body, html {
 }
 
 .button img {
+   position: absolute;
    width: 50%;
    height: auto;
     
