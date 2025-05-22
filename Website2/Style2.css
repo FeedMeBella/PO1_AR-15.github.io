@@ -44,6 +44,7 @@ body, html {
     bottom: 0px;
     left: 20%;
     width: auto;
+    animation: move 5s ease-out forwards;
 }
 
 .phone img {
@@ -52,6 +53,21 @@ body, html {
     left: 0px;
     bottom: 0px;
 }
+
+@keyframes move {
+  from {
+    bottom: -400%;
+  }
+  to {
+    bottom: 0px;
+  }
+}
+
+
+
+
+
+
 
 
 @media (max-width: 1000px) {
