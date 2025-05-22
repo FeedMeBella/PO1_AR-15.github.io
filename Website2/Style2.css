@@ -37,16 +37,18 @@ body, html {
     height: 100%;
 }
 
-.phone{
+.phone {
     position: relative;
     height: calc(var(--vh, 1vh) * 70);
     bottom: 0px;
     left: 30%;
     width: auto;
-    img{
-        height: 100%;
-        left: 0px;
-    }
+}
+
+.phone img {
+    position: relative;
+    height: 100%;
+    left: 0px;
 }
 
 
