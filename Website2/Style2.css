@@ -6,8 +6,8 @@ body, html {
 body {
   height:calc(var(--vh, 1vh) * 100);
   background: linear-gradient( to bottom,
-              ##181413 0%,
-              ##181413 90%,
+              #181413 0%,
+              #181413 90%,
               #d58332 90%,
               #d58332 100%);
 }
