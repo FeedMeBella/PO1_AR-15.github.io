@@ -5,11 +5,11 @@ body, html {
 
 body {
   height:calc(var(--vh, 1vh) * 100);
-  background: linear-gradient( to top,
-              DimGray 0%,
-              DimGray 70%,
-              Yellow 70%,
-              Yellow 100%);
+  background: linear-gradient( to bottom,
+              #0f0d0c 0%,
+              #0f0d0c 90%,
+              #d58332 90%,
+              #d58332 100%);
 }
 
 .right{
