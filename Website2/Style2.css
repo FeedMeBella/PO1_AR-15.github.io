@@ -12,15 +12,6 @@ body {
               #d58332 100%);
 }
 
-.hidden{
-    position: fixed;
-    font-size: 10px;
-    left: 50%;
-    overflow: hidden;
-    bottom: 50%;
-    color: yellow;
-    z-index: 6;
-}
 .right{
     position: fixed;
     right: 0px;
