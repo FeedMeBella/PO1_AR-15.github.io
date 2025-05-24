@@ -107,14 +107,14 @@ body {
 @media (max-aspect-ratio: 0.8) {
     .right img {
         position: absolute;
-        transform: translateX(4%);
+        transform: translateX(5%);
         height: 65%;
         bottom: 0px;
         right: 0px;
    }
 
     .left img {
-        transform: translateX(-10%);
+        transform: translateX(-7%);
         height: 100%;
     }
     
