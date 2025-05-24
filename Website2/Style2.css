@@ -4,7 +4,13 @@ body, html {
 }
 
 body {
-  background-color: black;
+  background: linear-gradient( to top,
+        DimGray 0%,
+        DimGray 70%,
+        Yellow 70%,
+        Yellow 100%
+  );
+  
 }
 
 .right{
