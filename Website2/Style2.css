@@ -114,7 +114,7 @@ body {
    }
 
     .left img {
-        transform: translateX(-25%);
+        transform: translateX(-10%);
         height: 100%;
     }
     
