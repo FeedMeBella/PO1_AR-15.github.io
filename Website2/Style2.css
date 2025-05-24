@@ -13,6 +13,7 @@ body {
 }
 
 .hidden{
+    position: fixed;
     font-size: 10px;
     left: 50%
     overflow: hidden;
