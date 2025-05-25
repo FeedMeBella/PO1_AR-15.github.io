@@ -69,7 +69,7 @@ body {
 }
 
 .bot{
-  opacity: 0;
+  opacity: 0 !important;
 }
 
 .button:hover .bot{
