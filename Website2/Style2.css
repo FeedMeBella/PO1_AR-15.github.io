@@ -75,7 +75,7 @@ body {
     width: auto;
 }
 
-.phone {
+#phone {
     position: relative;
     height: 100%;
     left: 0px;
@@ -89,14 +89,12 @@ body {
   top: 18%;
   left: 16.1%;
   width: 69%;
-  max-height: 30%;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 8px;
   box-sizing: border-box;
 }
-
 .full-width {
   
   width: 100%;
@@ -106,7 +104,6 @@ body {
   cursor: pointer;
   z-index: 5;
 }
-
 .button-row {
   display: flex;
   width: 100%;
@@ -115,7 +112,6 @@ body {
   gap: 8px;
   z-index: 5;
 }
-
 .half {
   object-fit: contain;
   display: block;
@@ -123,11 +119,9 @@ body {
   flex-grow: 1;
   width: 40%;
 }
-
 .full-width:hover {
   opacity: 0.5;
 }
-
 .half:hover {
   opacity: 0.5;
 }
@@ -148,7 +142,7 @@ body {
   }
   
   .phone-container {
-      position: relative;
+      position: fixed;
       height: calc(var(--vh, 1vh) * 100);
       width: 100vw;
       z-index: 3;
@@ -159,7 +153,7 @@ body {
   }
 
 
-  .phone  {
+  #phone  {
       width: 100%;
       max-height: 100%;
       height: auto;
@@ -167,35 +161,21 @@ body {
   }
 
 
- #space-bar {
-  position: fixed;
-  left: 0px;
-  bottom: 1%;
-  z-index: 4;
+  #space-bar {
+    position: fixed;
+    left: 0px;
+    bottom: 1%;
+    z-index: 4;
   }
 
   .space img {
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-  width: 100vw;
-  height: auto;
-  opacity: 0.4;
-      
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100vw;
+    height: auto;
+    opacity: 0.4;    
   }
-
-  .focus{
-  opacity: 0;
-  }
-
-  .space:hover .focus{
-  opacity: 0.8;
-  }
-
-  .space:hover .idle{
-  opacity: 0;
-  }
-
 }
 
 
@@ -217,4 +197,3 @@ body {
     bottom: 0px;
   }
 }
-
