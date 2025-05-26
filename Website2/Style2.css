@@ -145,7 +145,7 @@ body {
   
   .phone-container {
       position: fixed;
-      height: calc(var(--vh, 1vh) * 85);
+      height: calc(var(--vh, 1vh) * 90);
       width: 100vw;
       z-index: 3;
       bottom: -200%;
