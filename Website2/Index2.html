@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -16,33 +17,61 @@
       <img src="./Images/Website_bg.png" alt="planet">
   </div>
 
-  <div class="button" id="button">
-      <img src="./Images/buttonpress.png" class="top" alt="Normal Button">
-      <img src="./Images/button.png" class="bot" alt="Pressed Button">
+  <div class="button" id="space-bar">
+      <img src="./Images/sbaridle.png" class="idle" alt="space bar idle">
+      <img src="./Images/sbarhover.png" class="focus" alt="space bar hover">
   </div>
 
-  <div class="phone" id="menu" >
-      <img src="./Images/Phone.png" alt="menu">
+  <div class="phone-container" id="menu" >
+    <img src="./Images/Phone.png" class="phone" alt="menu">
+      <div class="button-container">
+        <img src="./Images/button1.png" class="full-width" alt="Button 1">
+        <div class="button-row">
+          <img src="./Images/button2.png" class="half" alt="Button 2">
+          <img src="./Images/button2.png" class="half" alt="Button 3">
+        </div>
+        <div class="button-row">
+          <img src="./Images/button2.png" class="half" alt="Button 4">
+          <img src="./Images/button2.png" class="half" alt="Button 5">
+        </div>
+     </div>
   </div>
   
-<script>
-  function setVh() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  }
-
-  window.addEventListener('resize', setVh);
-  window.addEventListener('load', setVh);
-</script>
 
 
-  
-<script>
-  document.getElementById('button').addEventListener('click', () => {
-    document.getElementById('menu').classList.add('move');
-    document.getElementById('button').classList.add('hide');
-  });
-</script>
+  <script>
+    function setVh() {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    window.addEventListener('resize', setVh);
+    window.addEventListener('load', setVh);
+  </script>
+
+
+    
+  <script>
+    const button = document.getElementById('space-bar');
+    const menu = document.getElementById('menu');
+
+    function activateMenu() {
+      menu.classList.add('move');
+      button.classList.add('hide');
+    }
+
+    button.addEventListener('click', activateMenu);
+
+    document.addEventListener('keydown', (event) => {
+      if (event.code === 'Space') {
+        event.preventDefault(); 
+        activateMenu();
+      }
+    });
+    setTimeout(() => {
+      activateMenu();
+    }, 10000); 
+  </script>
 
 
 </html>
