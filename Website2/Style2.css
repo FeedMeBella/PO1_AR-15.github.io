@@ -47,7 +47,7 @@ body {
   cursor: pointer;
 
 }
-.button img {
+.space img {
    position: absolute;
    left: 0px;
    bottom: 0px;
@@ -59,10 +59,10 @@ body {
 .focus{
   opacity: 0;
 }
-.button:hover .focus{
+.space:hover .focus{
   opacity: 0.4;
 }
-.button:hover .idle{
+.space:hover .idle{
   opacity: 0;
 }
 
@@ -73,10 +73,6 @@ body {
     bottom: -200%;
     left: 20%;
     width: auto;
-}
-
-.phone-container.move{
-    animation: move 1.5s ease-out forwards;
 }
 
 .phone {
@@ -171,17 +167,14 @@ body {
   }
 
 
-
-
-  .button {
+  #space-bar {
   position: fixed;
   left: 0px;
   bottom: 1%;
   z-index: 4;
-
   }
 
-  .button img {
+  .space img {
   position: absolute;
   left: 0px;
   bottom: 0px;
@@ -195,16 +188,20 @@ body {
   opacity: 0;
   }
 
-  .button:hover .focus{
+  .space:hover .focus{
   opacity: 0.8;
   }
 
-  .button:hover .idle{
+  .space:hover .idle{
   opacity: 0;
   }
 
 }
 
+
+.phone-container.move{
+    animation: move 1.5s ease-out forwards;
+}
 
 .hide{
   visibility: hidden;
