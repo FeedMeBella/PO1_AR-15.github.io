@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'VA-11 Hall-A 6px Non-mono';
+    src: url("font/VA-11Hall-A6pxNon-mono.eot");
+    src: url("font/VA-11Hall-A6pxNon-mono.eot") format('embedded-opentype'),
+        url("font/VA-11Hall-A6pxNon-mono.woff2") format('woff2'),
+        url("font/VA-11Hall-A6pxNon-mono.woff") format('woff'),
+        url("font/VA-11Hall-A6pxNon-mono.svg") format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 body, html {
     margin:0;
     padding:0;
@@ -10,6 +23,28 @@ body {
               #181413 90%,
               #d58332 90%,
               #d58332 100%);
+}
+/* Loading Screen */
+
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+#loading pre{
+  position: absolute;
+  color:rgb(155, 155, 155);
+  font-size: medium;
+  font-family: 'VA-11 Hall-A 6px Non-mono';
+  left: 70%;
+  bottom: 50%;
 }
 
 /* Background */
@@ -187,5 +222,16 @@ body {
   }
   to {
     bottom: 0px;
+  }
+}
+
+#loading pre::after {
+  content: "|";
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }
