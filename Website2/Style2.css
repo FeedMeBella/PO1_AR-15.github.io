@@ -1,6 +1,7 @@
 body, html {
     margin:0;
     padding:0;
+    overflow: hidden;
 }
 body {
   height:calc(var(--vh, 1vh) * 100);
@@ -67,22 +68,20 @@ body {
 }
 
 .phone-container {
-    position: fixed;
-    height: calc(var(--vh, 1vh) * 98);
-    z-index: 3;
-    bottom: -200%;
-    left: 20%;
-    width: auto;
+  position: fixed;
+  height: calc(var(--vh, 1vh) * 98);
+  z-index: 3;
+  bottom: -200%;
+  left: 20%;
+  width: auto;
 }
 
 #phone {
-    position: relative;
-    height: 100%;
-    left: 0px;
-    bottom: 0px;
+  position: relative;
+  height: 100%;
+  left: 0px;
+  bottom: 0px;
 }
-
-  /* phone Buttons */
 
 .button-container {
   position: absolute;
@@ -90,46 +89,37 @@ body {
   left: 13.2%;
   height: 54%;
   width: 74%;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  box-sizing: border-box;
+  gap: 1%;
 }
-.full-width {
-  
+
+.button-container div{
+  flex: 1 1;
   width: 100%;
-  height: calc((100% - 16px) / 3);
-  object-fit: contain;
-  display: block;    
-  cursor: pointer;
-  z-index: 5;
-}
-.button-row {
+  height: 30%;
   display: flex;
+  gap: 1%;
+}
+
+#full-width{
   width: 100%;
-  height: calc((100% - 16px) / 3);
-  justify-content: space-between;
-  gap: 8px;
-  z-index: 5;
 }
 
-.half {
-  object-fit: fill;
-  display: block;
-  cursor: pointer;
-  flex-grow: 1;
+#half {
+  flex: 1 1;
 }
 
-.full-width:hover {
+#full-width:hover {
   opacity: 0.5;
 }
-.half:hover {
+#half:hover {
   opacity: 0.5;
 }
 
 
-@media (max-aspect-ratio: 0.7) {
+
+@media (max-aspect-ratio: 0.5) {
   .right img {
       position: absolute;
       transform: translateX(5%);
@@ -137,15 +127,28 @@ body {
       bottom: 0px;
       right: 0px;
   }
-
   .left img {
       transform: translateX(-7%);
       height: 100%;
   }
-  
+    #space-bar {
+    position: fixed;
+    left: 0px;
+    bottom: 1%;
+    z-index: 4;
+  }
+  .space img {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100vw;
+    height: auto;
+    opacity: 0.4;    
+  }
+
   .phone-container {
       position: fixed;
-      height: calc(var(--vh, 1vh) * 90);
+      height: calc(var(--vh, 1vh) * 100);
       width: 100vw;
       z-index: 3;
       bottom: -200%;
@@ -158,27 +161,29 @@ body {
   #phone  {
       width: 100%;
       max-height: 100%;
-      height: auto;
       bottom: 0px;
-      object-fit: contain;
   }
 
+.button-container {
+  position: absolute;
+  top: 18%;
+  left: 13.2%;
+  height: 54%;
+  width: 74%;
+  display: flex;
+  flex-direction: column;
+  gap: 1%;
+}
 
-  #space-bar {
-    position: fixed;
-    left: 0px;
-    bottom: 1%;
-    z-index: 4;
-  }
+.button-container div{
+  flex: 1 1;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  gap: 1%;
+}
 
-  .space img {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: auto;
-    opacity: 0.4;    
-  }
+
 }
 
 
