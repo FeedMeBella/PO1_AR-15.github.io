@@ -119,7 +119,7 @@ function onLoadingComplete() {
   loadingFinished = true;
 
   const completeLine = document.createElement('span');
-  completeLine.textContent = "\nloading complete, click anywhere to enter";
+  completeLine.textContent = "\nloading complete, press any key to enter";
   completeLine.style.color = 'lightgreen';
   completeLine.style.cursor = 'default';
   completeLine.style.userSelect = 'none';
@@ -129,26 +129,40 @@ function onLoadingComplete() {
   const loader = document.getElementById("loading");
   const BGmusic = document.getElementById("donaranha");
 
-  // Click anywhere on the loader to remove it & start menu/music
-  loader.addEventListener('click', () => {
-    loader.classList.add("hide"); // trigger fadeout
+
+ function proceed() {
+    loader.classList.add("hide");
 
     BGmusic.play().catch(err => {
       console.warn("Autoplay prevented:", err);
     });
 
-    // After fadeout transition ends, remove loader & start menu logic
-    loader.addEventListener('transitionend', () => {
-      loader.remove();
-      startMenuLogic();
+    loader.addEventListener('transitionend', (e) => {
+      if (e.propertyName === "opacity") {
+        loader.remove();
+        startMenuLogic();
+      }
     }, { once: true });
-  }, { once: true });
+
+    // Cleanup listeners
+    document.removeEventListener('keydown', keyListener);
+    loader.removeEventListener('click', clickListener);
+  }
+
+  function keyListener() {
+    proceed();
+  }
+
+  function clickListener() {
+    proceed();
+  }
+
+  document.addEventListener('keydown', keyListener);
+  loader.addEventListener('click', clickListener);
 }
 
-// Start typing immediately
 typeText1();
 
-// When window fully loads, call onLoadingComplete to stop typing and show clickable text
 window.addEventListener("load", () => {
   onLoadingComplete();
 });
