@@ -5,7 +5,7 @@
 
   <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="Style2.css">
+      <link rel="stylesheet" href="Style.css">
   </head>
 
   <body>
@@ -43,6 +43,8 @@
   </body>
 
   <audio id="type-sound" src="sounds/typewriter.mp3" preload="auto"></audio>
+  <audio id="donaranha" src="sounds/donaranha.mp3" preload="auto"></audio>
+
 <!--Scripts-->
 
   <script>
@@ -55,97 +57,123 @@
     window.addEventListener('load', setVh);
   </script>
 
-
-  <script>
-    window.addEventListener("load", () => {
-    const loader = document.getElementById("loading");
-    loader.classList.add("hide");
-
-    loader.addEventListener("transitionend", () => {
-      loader.remove();
-      loadingFinished = true;
-      startMenuLogic();
-    });
-  });
-    
-  function startMenuLogic() {
-    const button = document.getElementById('space-bar');
-    const menu = document.getElementById('menu');
-
-    function activateMenu() {
-      menu.classList.add('move');
-      button.classList.add('hide');
-    }
-
-    button.addEventListener('click', activateMenu);
-
-    document.addEventListener('keydown', (event) => {
-      if (event.code === 'Space') {
-        event.preventDefault();
-        activateMenu();
-      }
-    });
-
-    setTimeout(() => {
-      activateMenu();
-    }, 10000);
-  }
-</script>
-
 <script>
-  const text1 = "This is a loading screen";
-  const text2 = "...";
-  const text3 = "Wow, your internet is really slow...";
-  const target = document.querySelector("#loading pre");
-  const typeSound = document.getElementById("type-sound");
+const text1 = "This is a loading screen";
+const text2 = "...";
+const text3 = "Wow, your internet is really slow...";
+const target = document.querySelector("#loading pre");
+const typeSound = document.getElementById("type-sound");
 
-  let i1 = 0, i2 = 0, i3 = 0;
+let i1 = 0, i2 = 0, i3 = 0;
+let loadingFinished = false;
+let stopTyping = false;
 
-  let loadingFinished = false;
+function playTypeSound() {
+  if (loadingFinished) return;
+  typeSound.currentTime = 0;
+  typeSound.play();
+}
 
-  function playSound() {
-    if (loadingFinished) return;
-    typeSound.currentTime = 0;
-    typeSound.play();
+function paragraph() {
+  target.textContent += "\n";
+}
+
+function typeText1() {
+  if (stopTyping) return;
+  if (i1 < text1.length) {
+    target.textContent += text1.charAt(i1);
+    playTypeSound();
+    i1++;
+    setTimeout(typeText1, 130);
+  } else {
+    setTimeout(paragraph, 1000);
+    setTimeout(typeText2, 2000);
+  }
+}
+
+function typeText2() {
+  if (stopTyping) return;
+  if (i2 < text2.length) {
+    target.textContent += text2.charAt(i2);
+    playTypeSound();
+    i2++;
+    setTimeout(typeText2, 400);
+  } else {
+    setTimeout(paragraph, 3000);
+    setTimeout(typeText3, 4000);
+  }
+}
+
+function typeText3() {
+  if (stopTyping) return;
+  if (i3 < text3.length) {
+    target.textContent += text3.charAt(i3);
+    playTypeSound();
+    i3++;
+    setTimeout(typeText3, 100);
+  }
+}
+
+function onLoadingComplete() {
+  stopTyping = true;
+  loadingFinished = true;
+
+  const completeLine = document.createElement('span');
+  completeLine.textContent = "\nloading complete, click anywhere to enter";
+  completeLine.style.color = 'lightgreen';
+  completeLine.style.cursor = 'default';
+  completeLine.style.userSelect = 'none';
+
+  target.appendChild(completeLine);
+
+  const loader = document.getElementById("loading");
+  const BGmusic = document.getElementById("donaranha");
+
+  // Click anywhere on the loader to remove it & start menu/music
+  loader.addEventListener('click', () => {
+    loader.classList.add("hide"); // trigger fadeout
+
+    BGmusic.play().catch(err => {
+      console.warn("Autoplay prevented:", err);
+    });
+
+    // After fadeout transition ends, remove loader & start menu logic
+    loader.addEventListener('transitionend', () => {
+      loader.remove();
+      startMenuLogic();
+    }, { once: true });
+  }, { once: true });
+}
+
+// Start typing immediately
+typeText1();
+
+// When window fully loads, call onLoadingComplete to stop typing and show clickable text
+window.addEventListener("load", () => {
+  onLoadingComplete();
+});
+
+function startMenuLogic() {
+  const button = document.getElementById('space-bar');
+  const menu = document.getElementById('menu');
+
+  function activateMenu() {
+    menu.classList.add('move');
+    button.classList.add('hide');
   }
 
-  function typeText1() {
-    if (i1 < text1.length) {
-      target.textContent += text1.charAt(i1);
-      playSound();
-      i1++;
-      setTimeout(typeText1, 130);
-    } else {
-      setTimeout(paragraph, 1000);
-      setTimeout(typeText2, 2000);
-    }
-  }
+  button.addEventListener('click', activateMenu);
 
-  function typeText2() {
-    if (i2 < text2.length) {
-      target.textContent += text2.charAt(i2);
-      playSound();
-      i2++;
-      setTimeout(typeText2, 400);
-    } else {
-      setTimeout(paragraph, 3000);
-      setTimeout(typeText3, 4000);
+  document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space') {
+      event.preventDefault();
+      activateMenu();
     }
-  }
+  });
 
-  function typeText3() {
-    if (i3 < text3.length) {
-      target.textContent += text3.charAt(i3);
-      playSound();
-      i3++;
-      setTimeout(typeText3, 100);
-    }
-  }
-
-  function paragraph(){
-       target.textContent += "\n";
-    }
-  typeText1();
+  setTimeout(() => {
+    activateMenu();
+  }, 10000);
+}
 </script>
-
 </html>
