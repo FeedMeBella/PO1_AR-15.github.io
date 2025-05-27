@@ -160,6 +160,11 @@ body {
 
 /* Tablet Mode */
 @media (max-aspect-ratio: 0.8) {
+
+  #loading pre{
+  left: 1%;
+  bottom: 50%;
+}
   .right img {
       position: absolute;
       transform: translateX(5%);
