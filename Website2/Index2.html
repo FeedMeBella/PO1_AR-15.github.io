@@ -57,12 +57,17 @@
 
 
   <script>
-     window.addEventListener("load", () => {
+    window.addEventListener("load", () => {
     const loader = document.getElementById("loading");
     loader.classList.add("hide");
-    startMenuLogic();
-    });
 
+    loader.addEventListener("transitionend", () => {
+      loader.remove();
+      loadingFinished = true;
+      startMenuLogic();
+    });
+  });
+    
   function startMenuLogic() {
     const button = document.getElementById('space-bar');
     const menu = document.getElementById('menu');
@@ -96,7 +101,10 @@
 
   let i1 = 0, i2 = 0, i3 = 0;
 
-    function playSound() {
+  let loadingFinished = false;
+
+  function playSound() {
+    if (loadingFinished) return;
     typeSound.currentTime = 0;
     typeSound.play();
   }
