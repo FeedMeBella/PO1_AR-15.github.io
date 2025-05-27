@@ -217,9 +217,9 @@ body {
     animation: move 1.5s ease-out forwards;
 }
 .hide {
-  opacity: 0;
-  visibility: hidden;
   transition: opacity 0.5s linear, visibility 0s 0.5s;
+  visibility: hidden;
+  opacity: 0;
 }
 @keyframes move {
   from {
