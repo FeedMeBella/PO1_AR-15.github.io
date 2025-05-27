@@ -40,9 +40,9 @@ body {
   position: absolute;
   color:rgb(155, 155, 155);
   font-size: medium;
-  font-family: 'VA-11 Hall-A 6px Non-mono';
-  left: 70%;
-  bottom: 50%;
+  font-family: 'VA-11 Hall-A 6px Non-mono'; 
+  left: 50%;
+  bottom: 60%;
 }
 
 /* Background */
