@@ -80,14 +80,7 @@
 <script>
   window.addEventListener("load", () => {
     const loader = document.getElementById("loading");
-
-    // Fade it out
     loader.classList.add("hide");
-
-    // Optional: fully remove it after transition ends
-    loader.addEventListener("transitionend", () => {
-      loader.remove();
-    });
   });
 </script>
 
