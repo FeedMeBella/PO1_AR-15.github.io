@@ -1,151 +1,261 @@
+@font-face {
+    font-family: 'VA-11 Hall-A 6px Non-mono';
+    src: url("font/VA-11Hall-A6pxNon-mono.eot");
+    src: url("font/VA-11Hall-A6pxNon-mono.eot") format('embedded-opentype'),
+        url("font/VA-11Hall-A6pxNon-mono.woff2") format('woff2'),
+        url("font/VA-11Hall-A6pxNon-mono.woff") format('woff'),
+        url("font/VA-11Hall-A6pxNon-mono.svg") format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
-<!DOCTYPE html>
+body, html {
+    margin:0;
+    padding:0;
+    overflow: hidden;
+}
+body {
+  height:calc(var(--vh, 1vh) * 100);
+  background: linear-gradient( to bottom,
+              #181413 0%,
+              #181413 90%,
+              #d58332 90%,
+              #d58332 100%);
+}
 
-<html>
+/* Loading Screen */
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+#loading pre{
+  position: absolute;
+  color:rgb(155, 155, 155);
+  font-size: medium;
+  font-family: 'VA-11 Hall-A 6px Non-mono';
+  left: 70%;
+  bottom: 50%;
+}
 
-  <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="Style2.css">
-  </head>
+/* Background */
+.right{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    z-index: 2;
+    overflow: visible;
+    margin: 0px;
+    padding: 0px;
+    height: calc(var(--vh, 1vh) * 100);
+    width: auto;
 
-  <body>
-    <div id="loading">
-      <pre></pre>
-    </div>
-    <div class="right">
-        <img src="./Images/test.gif" alt="Bar">
-    </div>
-    <div class="left">
-        <img src="./Images/Website_bg.png" alt="planet">
-    </div>
+}
+.left{
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1;
+    overflow: hidden;
+    padding: 0px;
+    height: calc(var(--vh, 1vh) * 100);
 
-    <div class="space" id="space-bar">
-        <img src="./Images/sbaridle.png" class="idle" alt="space bar idle">
-        <img src="./Images/sbarhover.png" class="focus" alt="space bar hover">
-    </div>
+}
+.left img{
+    height: 100%;
+    transition: transform 0.5s ease, height 0.5s ease;
+}
+.right img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    transition: transform 0.5s ease, height 0.5s ease;
+}
 
-    <div class="phone-container" id="menu" >
-      <img src="./Images/Phone.png" id="phone" alt="menu">
-        <div class="button-container">
-          <div class="button-row ">
-            <img src="./Images/button1.png" id="full-width" alt="Button 1">
-          </div>
-          <div class="button-row">
-            <img src="./Images/button2.png" id="half" alt="Button 2">
-            <img src="./Images/button2.png" id="half" alt="Button 3">
-          </div>
-          <div class="button-row">
-            <img src="./Images/button2.png" id="half" alt="Button 4">
-            <img src="./Images/button2.png" id="half" alt="Button 5">
-          </div>
-      </div>
-    </div>
-  </body>
+/* Space Bar Button */
+#space-bar {
+  position: fixed;
+  left: 19.5%;
+  bottom: 0%;
+  z-index: 4;
+  cursor: pointer;
 
-  <audio id="type-sound" src="sounds/typewriter.mp3" preload="auto"></audio>
-<!--Scripts-->
-
-  <script>
-    function setVh() {
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-
-    window.addEventListener('resize', setVh);
-    window.addEventListener('load', setVh);
-  </script>
-
-
-  <script>
-    window.addEventListener("load", () => {
-    const loader = document.getElementById("loading");
-    loader.classList.add("hide");
-
-    loader.addEventListener("transitionend", () => {
-      loader.remove();
-      loadingFinished = true;
-      startMenuLogic();
-    });
-  });
+}
+.space img {
+   position: absolute;
+   left: 0px;
+   bottom: 0px;
+   width: calc(100vh * 0.568518);
+   height: auto;
+   opacity: 0.4;
     
-  function startMenuLogic() {
-    const button = document.getElementById('space-bar');
-    const menu = document.getElementById('menu');
+}
+.focus{
+  opacity: 0;
+}
+.space:hover .focus{
+  opacity: 0.4;
+}
+.space:hover .idle{
+  opacity: 0;
+}
 
-    function activateMenu() {
-      menu.classList.add('move');
-      button.classList.add('hide');
-    }
+/* Blueberrry 925 */
+.phone-container {
+  position: fixed;
+  height: calc(var(--vh, 1vh) * 98);
+  z-index: 3;
+  bottom: -200%;
+  left: 20%;
+  width: auto;
+  transition: transform 0.5s ease, height 0.5s ease;
+}
+#phone {
+  position: relative;
+  height: 100%;
+  left: 0px;
+  bottom: 0px;
+}
 
-    button.addEventListener('click', activateMenu);
+/* Blueberrry 925 Buttons */
+.button-container {
+  position: absolute;
+  top: 18%;
+  left: 13.2%;
+  height: 54%;
+  width: 74%;
+  display: flex;
+  flex-direction: column;
+  gap: 1%;
+}
+.button-container div{
+  flex: 1 1;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  gap: 1%;
+}
+#full-width{
+  width: 100%;
+}
+#half {
+  flex: 1 1;
+}
+#full-width:hover {
+  opacity: 0.5;
+}
+#half:hover {
+  opacity: 0.5;
+}
 
-    document.addEventListener('keydown', (event) => {
-      if (event.code === 'Space') {
-        event.preventDefault();
-        activateMenu();
-      }
-    });
+/* POLARIS.html */
 
-    setTimeout(() => {
-      activateMenu();
-    }, 10000);
+.POLARIS{
+  background-image: url("assets/POLARIS_bg.png"); 
+  background-size: 400px;
+  background-repeat: repeat;
+}
+
+.LOGO{
+  position: fixed;
+  top: 0px;
+  height: 20%;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
+
+.LOGO img{
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* Tablet Mode */
+@media (max-aspect-ratio: 0.8) {
+  #loading pre{
+  left: 1%;
+  bottom: 50%;
+}
+  .right img {
+      position: absolute;
+      transform: translateX(5%);
+      height: 65%;
+      bottom: 0px;
+      right: 0px;
+      transition: height 0.5s ease;
   }
-</script>
-
-<script>
-  const text1 = "This is a loading screen";
-  const text2 = "...";
-  const text3 = "Wow, your internet is really slow...";
-  const target = document.querySelector("#loading pre");
-  const typeSound = document.getElementById("type-sound");
-
-  let i1 = 0, i2 = 0, i3 = 0;
-
-  let loadingFinished = false;
-
-  function playSound() {
-    if (loadingFinished) return;
-    typeSound.currentTime = 0;
-    typeSound.play();
+  .left img {
+      transform: translateX(-7%);
+      height: 100%;
+  }
+    #space-bar {
+    position: fixed;
+    left: 0px;
+    bottom: 1%;
+    z-index: 4;
+  }
+  .space img {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100vw;
+    height: auto;
+    opacity: 0.4;    
   }
 
-  function typeText1() {
-    if (i1 < text1.length) {
-      target.textContent += text1.charAt(i1);
-      playSound();
-      i1++;
-      setTimeout(typeText1, 130);
-    } else {
-      setTimeout(paragraph, 1000);
-      setTimeout(typeText2, 2000);
-    }
+.phone-container {
+  transform: translateX(-15%);
+}
+}
+
+/* Mobile Mode */
+@media (max-aspect-ratio: 0.58) {
+  .phone-container {
+  height: auto;
+  left: auto;
+  display: flex;
+  transform: translateX(0%);
+  transition: none;
+}
+#phone {
+  width: 100%;
+}
+}
+
+/* Animations and JS classes */
+.phone-container.move{
+    animation: move 1.5s ease-out forwards;
+}
+.hide {
+  transition: opacity 0.5s linear, visibility 0s 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+@keyframes move {
+  from {
+    bottom: -200%;
   }
-
-  function typeText2() {
-    if (i2 < text2.length) {
-      target.textContent += text2.charAt(i2);
-      playSound();
-      i2++;
-      setTimeout(typeText2, 400);
-    } else {
-      setTimeout(paragraph, 3000);
-      setTimeout(typeText3, 4000);
-    }
+  to {
+    bottom: 0px;
   }
-
-  function typeText3() {
-    if (i3 < text3.length) {
-      target.textContent += text3.charAt(i3);
-      playSound();
-      i3++;
-      setTimeout(typeText3, 100);
-    }
+}
+#loading pre::after {
+  content: "|";
+  animation: blink 0.7s step-end infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
-
-  function paragraph(){
-       target.textContent += "\n";
-    }
-  typeText1();
-</script>
-
-</html>
+}
