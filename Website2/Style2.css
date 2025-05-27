@@ -33,7 +33,6 @@ body {
   height: 100vh;
   background: black;
   z-index: 9999;
-  transition: opacity 0.5s ease;
   pointer-events: none;
 }
 #loading pre{
@@ -166,7 +165,7 @@ body {
 
 .LOGO{
   position: fixed;
-  top: 0px;
+  top: 2%;
   height: 20%;
   width: 100vw;
   display: flex;
@@ -178,11 +177,61 @@ body {
   height: 100%;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
 }
 
+.back2index{
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 2;
+}
+
+.back2index img{
+  height: 15vh;
+  width: auto;
+}
+
+.polaris-buttons-container {
+  position: fixed;
+  bottom: 3%;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  gap: 20%;
+}
+
+.polaris-buttons {
+  position: relative;
+  height: 15vh;
+}
+
+.polaris-buttons img {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  transition: opacity 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.polaris-buttons .idle {
+  opacity: 1;
+}
+
+.polaris-buttons .focus {
+  opacity: 0;
+}
+
+.polaris-buttons:hover .idle {
+  opacity: 0;
+}
+
+.polaris-buttons:hover .focus {
+  opacity: 1;
+}
 
 /* Tablet Mode */
-@media (max-aspect-ratio: 0.8) {
+@media (max-aspect-ratio: 1) {
   #loading pre{
   left: 1%;
   bottom: 50%;
@@ -242,6 +291,7 @@ body {
   visibility: hidden;
   opacity: 0;
 }
+
 @keyframes move {
   from {
     bottom: -200%;
