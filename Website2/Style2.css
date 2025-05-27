@@ -216,10 +216,10 @@ body {
 .phone-container.move{
     animation: move 1.5s ease-out forwards;
 }
-.hide{
-  visibility: hidden;
+.hide {
   opacity: 0;
-  transition: visibility 0s 0.5s, opacity 0.5s linear;
+  visibility: hidden;
+  transition: opacity 0.5s linear, visibility 0s 0.5s;
 }
 @keyframes move {
   from {
