@@ -23,6 +23,9 @@ body {
               #d58332 90%,
               #d58332 100%);
 }
+a {
+  text-decoration: none;
+}
 
 /* Loading Screen */
 #loading {
@@ -40,7 +43,7 @@ body {
   position: absolute;
   color:rgb(155, 155, 155);
   font-size: medium;
-  font-family: 'VA-11 Hall-A 6px Non-mono'; 
+  font-family: 'VA-11 Hall-A 6px Non-mono';
   left: 50%;
   bottom: 60%;
 }
@@ -136,27 +139,30 @@ body {
   flex-direction: column;
   gap: 1%;
 }
-.button-container div{
-  flex: 1 1;
-  width: 100%;
-  height: 30%;
+.button-row {
   display: flex;
+  flex: 1;
   gap: 1%;
 }
-#full-width{
+.button-container a.full-width{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.full-width img {
   width: 100%;
 }
-#half {
-  flex: 1 1;
+.half img{
+  width: 100%;
 }
-#full-width:hover {
-  opacity: 0.5;
-}
-#half:hover {
+.button-container a:hover img {
   opacity: 0.5;
 }
 
+
 /* POLARIS.html */
+
+/* header */
 
 .POLARIS{
   background-image: url("assets/POLARIS_bg.png"); 
@@ -167,7 +173,7 @@ body {
 .LOGO{
   position: fixed;
   top: 2%;
-  height: 20%;
+  height: 20vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -176,9 +182,10 @@ body {
 .LOGO img{
   position: absolute;
   height: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 50%;
+  transform: translateX(50%);
   z-index: 1;
+  transition: all 0.3s ease;   
 }
 
 .back2index{
@@ -193,18 +200,87 @@ body {
   width: auto;
 }
 
+/* episode listing */
+
+.ep-container {
+  position: fixed;
+  left: 15%;
+  bottom: 17vh;
+  width: 70vw;              
+  height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;                 
+  white-space: nowrap;      
+  background-color: rgba(113, 60, 70, 0.2);
+  display: flex;
+  flex-direction: column;
+  transition: left 0.3s ease;    
+}
+
+.ep-container a {
+  width: 100%;
+  height: 15vh;
+  font-family: 'VA-11 Hall-A 6px Non-mono';
+  margin: 1%;
+  transition: all 0.3s ease;
+  position: relative;
+  background-color: rgba(113, 60, 70, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.ep-container span {
+  position: relative;
+  color:rgb(231, 152, 69);
+}
+
+.episode-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.episode-date {
+  position: absolute;
+  right: 5%;
+}
+
+.listed-episode img {
+  height:100%;                     
+  object-fit: cover;
+  margin-right: 2%;
+}
+
+.listed-episode:hover {
+  background-color: rgba(113, 71, 60, 0.2);
+  height: 17vh;
+}
+
+.ep-container:hover a:not(:hover) {
+  height: 15vh;
+}
+
+
+
+
+/* footer */
+
 .polaris-buttons-container {
   position: fixed;
   bottom: 3%;
-  width: 100%;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center; 
-  gap: 20%;
+  justify-content: space-around; 
+  gap: 10%;
+  transition: all 0.3s ease;
 }
 
 .polaris-buttons {
   position: relative;
-  height: 15vh;
+  height: 12vh;
 }
 
 .polaris-buttons img {
@@ -263,11 +339,44 @@ body {
     height: auto;
     opacity: 0.4;    
   }
+  .phone-container {
+    transform: translateX(-15%);
+  }
 
-.phone-container {
-  transform: translateX(-15%);
+
+  /* Tablet episodes */
+  .LOGO{
+    right: 0%;
+    height: 14vh;
+    width: 80vw;
+  }
+  .LOGO img{
+    right: 0%;
+    transform: translateX(0%);
+    z-index: 1;
+  }
+  .back2index{
+    top: 2%;
+  }
+  .back2index img{
+    height: 13vh;
+  }
+
+  .ep-container {
+    width: 100vw;
+    left: 0%;
+    transition: left 0.3s ease, width 0.3s ease;
+  }
+
+  .polaris-buttons-container {
+    width: 100%;
+    left: 0%;
+    transform: translateX(0%);
+    gap: 7%;
+  }
 }
-}
+
+
 
 /* Mobile Mode */
 @media (max-aspect-ratio: 0.58) {
@@ -277,10 +386,27 @@ body {
   display: flex;
   transform: translateX(0%);
   transition: none;
-}
-#phone {
-  width: 100%;
-}
+  }
+  #phone {
+    width: 100%;
+  }
+
+  /* Mobile episodes */
+  .LOGO{
+    height: 24vw;
+  }
+  .back2index{
+    top: 2%;
+  }
+  .back2index img{
+    height: 22vw;
+  }
+  .ep-container {
+    height: 65vh;
+  }
+  .polaris-buttons {
+    height: 20vw;
+  }
 }
 
 /* Animations and JS classes */
@@ -309,4 +435,22 @@ body {
   50% {
     opacity: 0;
   }
+}
+
+
+/* scrolbar */
+.ep-container::-webkit-scrollbar {
+  width: 0.5vw;
+}
+.ep-container::-webkit-scrollbar-track {
+  background: rgba(35, 22, 15, 0.4); 
+  border-radius: 5px;
+}
+.ep-container::-webkit-scrollbar-thumb {
+  background-color: rgba(235, 111, 53, 0.6); 
+  border-radius: 4px;
+  border: 0.1vw solid rgba(255, 255, 255, 0.2);
+}
+.ep-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(235, 111, 53, 0.7);
 }
