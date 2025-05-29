@@ -207,7 +207,7 @@ a {
   left: 15%;
   bottom: 17vh;
   width: 70vw;              
-  height: 60vh;
+  height: calc(var(--vh, 1vh) * 60);;
   overflow-y: auto;
   overflow-x: hidden;                 
   white-space: nowrap;      
@@ -402,7 +402,7 @@ a {
     height: 22vw;
   }
   .ep-container {
-    height: 65vh;
+    height: calc(var(--vh, 1vh) * 65);;
   }
   .polaris-buttons {
     height: 20vw;
