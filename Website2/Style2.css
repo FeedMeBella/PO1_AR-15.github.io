@@ -402,7 +402,8 @@ a {
     height: 22vw;
   }
   .ep-container {
-    height: calc(var(--vh, 1vh) * 65);;
+    height: calc(var(--vh, 1vh) * 65);
+    bottom: calc(var(--vh, 1vh) * 13);
   }
   .polaris-buttons {
     height: 20vw;
