@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="Style.css">
+    </head>
+
+    <body class="Extras">
+        <!-- Header Button + Logo -->
+        <div class="back2index">
+            <a href="./Index.html"><img src="./assets/backtoindexgreen.gif" alt="back2index"></a>
+        </div>
+        <div class="LOGO" id="EXTRA-LOGO">
+            <img src="./assets/sartxe.png"  alt="Logo">
+        </div>
+        </div>
+
+
+        <!-- Items -->
+         <div class="Extras-wrapper">
+            <div class="Extras-item">
+                <img src="./extras/wheredoesitgothumb.png" alt="animatic">
+                <p class="Extras-title">Where does it go? - Animatic</p>
+                <p class="Extras-description">I made this a year ago after I found this banger song!</p>
+
+            </div>
+         </div>
+
+    </body>
+
+<!--Scripts-->
+<script>
+function setVh() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+window.addEventListener('resize', setVh);
+window.addEventListener('load', setVh);
+</script>
+
+</html>
