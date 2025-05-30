@@ -23,9 +23,11 @@ body.index {
               #d58332 90%,
               #d58332 100%);
 }
-a {
+a, p, h1{
   text-decoration: none;
+  font-family: "VA-11 Hall-A 6px Non-mono";
 }
+
 
 /* Loading Screen */
 #loading {
@@ -163,13 +165,11 @@ a {
 /* POLARIS.html */
 
 /* header */
-
 .POLARIS{
   background-image: url("assets/POLARIS_bg.png"); 
   background-size: 400px;
   background-repeat: repeat;
 }
-
 .LOGO{
   position: fixed;
   top: 2%;
@@ -178,7 +178,6 @@ a {
   display: flex;
   align-items: center;
 }
-
 .LOGO img{
   position: absolute;
   height: 100%;
@@ -187,21 +186,18 @@ a {
   z-index: 1;
   transition: all 0.3s ease;   
 }
-
 .back2index{
   position: fixed;
   top: 2%;
   left: 0%;
   z-index: 2;
 }
-
 .back2index img{
   height: 15vh;
   width: auto;
 }
 
 /* episode listing */
-
 .ep-container {
   position: fixed;
   left: 15%;
@@ -216,7 +212,6 @@ a {
   flex-direction: column;
   transition: left 0.3s ease;    
 }
-
 .ep-container a {
   width: 100%;
   height: 15vh;
@@ -228,19 +223,16 @@ a {
   display: flex;
   align-items: center;
 }
-
 .ep-container span {
   position: relative;
   color:rgb(231, 152, 69);
 }
-
 .episode-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
-
 .episode-date {
   position: absolute;
   right: 5%;
@@ -252,18 +244,15 @@ a {
   transform: translateY(200%);
   display: none;
 }
-
 .listed-episode img {
   height:100%;                     
   object-fit: cover;
   margin-right: 2%;
 }
-
 .listed-episode:hover {
   background-color: rgba(113, 71, 60, 0.2);
   height: 17vh;
 }
-
 .ep-container:hover a:not(:hover) {
   height: 15vh;
 }
@@ -284,12 +273,10 @@ a {
   gap: 10%;
   transition: all 0.3s ease;
 }
-
 .polaris-buttons {
   position: relative;
   height: 12vh;
 }
-
 .polaris-buttons img {
   position: absolute;
   height: 100%;
@@ -297,19 +284,15 @@ a {
   transition: opacity 0.3s ease;
   transform: translateX(-50%);
 }
-
 .polaris-buttons .idle {
   opacity: 1;
 }
-
 .polaris-buttons .focus {
   opacity: 0;
 }
-
 .polaris-buttons:hover .idle {
   opacity: 0;
 }
-
 .polaris-buttons:hover .focus {
   opacity: 1;
 }
@@ -320,7 +303,6 @@ a {
 .LOGO.hidden {
   transform: translateY(-100%);
 }
-
 .comic-wrapper{
   height: 100vh;
   overflow-y: auto;
@@ -348,6 +330,47 @@ a {
 .comic-buttons img {
   width: auto;
 }
+.comic h1{
+  color:rgb(226, 103, 46);
+}
+.comic p {
+  max-width: 90vw;
+  width: calc(var(--vh, 1vh) * 100);
+  text-align: center;
+  font-size: large;
+  color: rgb(255, 190, 111);
+  text-wrap:inherit;
+}
+.comic a{
+  color: rgb(132, 148, 250);
+  text-decoration: underline;
+}
+#comiclink:hover{
+  color: rgb(178, 187, 243);
+}
+#commentlink{
+  color: rgb(240, 136, 113);
+}
+#commentlink:hover{
+  color: rgb(228, 151, 134);
+}
+.comic-footer {
+  width: 100vw;
+  background-color: rgba(37, 30, 30, 0.7);
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0.7;
+}
+.comic-footer p {
+  width: auto;
+}
+.comic-footer img{
+  width: auto;
+}
+
 
 /* Cast.html */
 .cast-wrapper{
@@ -372,13 +395,11 @@ a {
 .Extras{
   background-color: rgb(122, 176, 83);
 }
-
 #EXTRA-LOGO {
   top:0%;
   background-color: rgba(160, 255, 52, 0.1);
   transition: height 0.1s ease;
 }
-
 #EXTRA-LOGO img{
   position: absolute;
   height: 90%;
@@ -387,7 +408,6 @@ a {
   z-index: 1;
   transition: all 0.3s ease;   
 }
-
 .Extras-wrapper{
   position: fixed;
   bottom: 0%;
@@ -396,13 +416,11 @@ a {
   display: flex;
   justify-content: space-around;
 }
-
 .Extras-item{
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 .Extras-item p{
   font-size: medium;
   font-family: 'VA-11 Hall-A 6px Non-mono';
@@ -413,7 +431,6 @@ a {
   color:rgb(69, 69, 69);
 
 }
-
 .Extras-description{
   text-align: center;
 }
@@ -617,7 +634,7 @@ a {
   width: 0.5vw;
 }
 .comic-wrapper::-webkit-scrollbar-track {
-  background: rgba(35, 22, 15, 0.4); 
+  background: rgb(50, 33, 24); 
   border-radius: 5px;
 }
 .comic-wrapper::-webkit-scrollbar-thumb {
