@@ -407,11 +407,12 @@ a, p, h1{
   text-decoration: none;
   color: inherit;
 }
+.cast-item h1{
+  font-size: calc(var(--vh, 1vh) * 4.2);
+}
 .cast-item {
   height: calc(var(--vh, 1vh) * 75);
   text-align: center;
-}
-.cast-item{
   opacity: 0;
 }
 .cast-item:hover {
