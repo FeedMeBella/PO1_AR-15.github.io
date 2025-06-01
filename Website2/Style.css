@@ -527,12 +527,16 @@ a, p, h1, figcaption{
 
 /* header */
 
-.Extras{
+.Extras {
   background-color: rgb(122, 176, 83);
+  background-image: url("extras/background.png");
+  background-repeat: repeat-y;   
+  background-position: right top;       
+  background-attachment: scroll;         
 }
 #EXTRA-LOGO {
   top:0%;
-  background-color: rgba(160, 255, 52, 0.1);
+  background-color: #7eb850;
   transition: height 0.1s ease;
 }
 #EXTRA-LOGO img{
@@ -543,31 +547,49 @@ a, p, h1, figcaption{
   z-index: 1;
   transition: all 0.3s ease;   
 }
-.Extras-wrapper{
+
+/* body */
+.Extras-wrapper {
   position: fixed;
-  bottom: 0%;
+  bottom: 0;
   width: 100vw;
-  height: calc(var(--vh, 1vh) * 70);
+  height: calc(var(--vh, 1vh) * 75);
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 1rem; 
+  overflow-y: auto;
+  transition: all 1s ease;
 }
-.Extras-item{
+.Extras-item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  max-height: 50%;
+  flex: 0 1 calc(34% - 2rem); /* 3 per row on desktop */
+  box-sizing: border-box;
+  height: auto;
+}
+.Extras-item img {
+  width: 100%;
+  max-height: 60%;
+  object-fit: contain;
 }
 .Extras-item p{
-  font-size: medium;
-  font-family: 'VA-11 Hall-A 6px Non-mono';
-  border: 0px;
+  margin: 2%;
 }
 .Extras-title{
   text-align: center;
-  color:rgb(69, 69, 69);
-
+  color:rgb(102, 1, 87);
+  font-size: large;
 }
 .Extras-description{
   text-align: center;
+  font-size: small;
+  color:rgb(77, 77, 77);
+}
+.Extras-item:hover {
+  opacity: 0.7;
 }
 
 
@@ -663,26 +685,34 @@ a, p, h1, figcaption{
   #EXTRA-LOGO img{
     top: 1%;
   }
-/* Tablet Cast Member*/
-.CastMember-wrapper{
-  flex-direction: column;
-}
-.CastMember-text{
-  padding-top: calc(var(--vh, 1vh) * 18);
-  padding-right: 7%;
-  padding-left: 7%;
-}
-.CastMember-images{
-  padding-top: calc(var(--vh, 1vh) * 0);
-  padding-right: 0%;
-}
-#CastMember-sheet {
-  width: 90%; 
-  padding-bottom: 4%;
-}
-#link2top {
-  padding-bottom: 7%;
-}
+  /* Tablet Cast Member*/
+  .CastMember-wrapper{
+    flex-direction: column;
+  }
+  .CastMember-text{
+    padding-top: calc(var(--vh, 1vh) * 18);
+    padding-right: 7%;
+    padding-left: 7%;
+  }
+  .CastMember-images{
+    padding-top: calc(var(--vh, 1vh) * 0);
+    padding-right: 0%;
+  }
+  #CastMember-sheet {
+    width: 90%; 
+    padding-bottom: 4%;
+  }
+  #link2top {
+    padding-bottom: 7%;
+  }
+
+  /* Tablet Extras*/
+  .Extras-wrapper {
+  height: calc(var(--vh, 1vh) * 80);
+  }
+  .Extras-item {
+    flex: 0 1 calc(53% - 2rem); /* 2 per row on smaller screens */
+  }
 }
 
 /* Mobile Mode */
@@ -845,5 +875,3 @@ a, p, h1, figcaption{
 .comic-wrapper::-webkit-scrollbar-thumb:hover {
   background-color: rgba(235, 111, 53, 0.7);
 }
-
-
