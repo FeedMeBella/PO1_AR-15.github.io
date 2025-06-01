@@ -26,19 +26,20 @@
 
     <div class="phone-container" id="menu" >
       <img src="./assets/Phone.png" id="phone" alt="menu">
-        <div class="button-container">
-          <div class="button-row">
-            <a href="PO1_AR-15.html" class="full-width"><img src="./assets/Polaris-button.png" alt="Button 1"></a>
-          </div>
-          <div class="button-row">
-            <a href="Extras.html" class="half"><img src="./assets/Extras.png" alt="Button 2"></a>
-            <a href="link3.html" class="half"><img src="./assets/button2.png" alt="Button 3"></a>
-          </div>
-          <div class="button-row">
-            <a href="link2.html" class="half"><img src="./assets/button2.png" alt="Button 2"></a>
-            <a href="link3.html" class="half"><img src="./assets/button2.png" alt="Button 3"></a>
-          </div>
+      <div class="button-container">
+        <div class="button-row">
+          <a href="PO1_AR-15.html" class="full-width"><img src="./assets/Polaris-button.png" alt="Button 1"></a>
+        </div>
+        <div class="button-row">
+          <a href="Extras.html" class="half"><img src="./assets/Extras.png" alt="Button 2"></a>
+          <a href="link3.html" class="half"><img src="./assets/button2.png" alt="Button 3"></a>
+        </div>
+        <div class="button-row">
+          <a href="link2.html" class="half"><img src="./assets/button2.png" alt="Button 2"></a>
+          <a href="link3.html" class="half"><img src="./assets/button2.png" alt="Button 3"></a>
+        </div>
       </div>
+      <div id="snooze"></div>
     </div>
   </body>
 
@@ -180,27 +181,52 @@ window.addEventListener("load", () => {
 });
 
 function startMenuLogic() {
-  const button = document.getElementById('space-bar');
+  const button = document.getElementById('space-bar'); 
+  const snooze = document.getElementById('snooze'); 
   const menu = document.getElementById('menu');
 
   function activateMenu() {
-    menu.classList.add('move');
+    menu.classList.remove('move-down');
+    menu.classList.add('move-up');
     button.classList.add('hide');
   }
 
-  button.addEventListener('click', activateMenu);
+  function deactivateMenu() {
+    menu.classList.remove('move-up');
+    menu.classList.add('move-down');
+
+    setTimeout(() => {
+      button.classList.remove('hide');
+    }, 700);
+  }
+
+  setTimeout(() => {
+    if (!menu.classList.contains('move-up') && !menu.classList.contains('move-down')) {
+      activateMenu();
+    }
+  }, 10000);
+
+  button.addEventListener('click', () => {
+    activateMenu();
+  });
+
+  snooze.addEventListener('click', () => {
+    deactivateMenu();
+  });
 
   document.addEventListener('keydown', (event) => {
     if (event.code === 'Space') {
       event.preventDefault();
-      activateMenu();
+
+      if (menu.classList.contains('move-up')) {
+        deactivateMenu();
+      } else {
+        activateMenu();
+      }
     }
   });
-
-  setTimeout(() => {
-    activateMenu();
-  }, 10000);
 }
+
 </script>
 
 </html>
