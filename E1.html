@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="../Style.css">
+    </head>
+
+    <body class="POLARIS episode">
+
+        <!--Header-->
+
+            <div class="back2index">
+                <a href="../PO1_AR-15.html"><img src="../assets/backtoindex.gif" alt="back2index"></a>
+            </div>
+            <div class="LOGO">
+                <img src="../assets/LOGO.png" id="comic-header" alt="Logo">
+            </div>
+
+        
+
+        <div class="comic-wrapper">
+            <div class="comic">
+                <h1 id="comic-title">Room to Grow</h1>
+                <div class="comic-buttons">
+                    <a href="E0.html" class="polaris-buttons">
+                        <img src="../assets/PREVTECH.png" class="idle" alt="prevtech">
+                        <img src="../assets/PREVVIC.png" class="focus" alt="prevvic">
+                    </a>
+                    <a href="E2.html" class="polaris-buttons">
+                        <img src="../assets/NEXTTECH.png" class="idle" alt="nexttech">
+                        <img src="../assets/NEXTVIC.png" class="focus" alt="nextvic">
+                    </a>
+                </div>
+                <img src="episodes/E1-1.jpg">
+                <img src="episodes/E1-2.jpg">
+                <img src="episodes/E1-3.jpg">
+                <img src="episodes/E1-4.jpg">
+                <div Style="Height: 3vh;"></div>
+                <div class="comic-buttons">
+                    <a href="E0.html" class="polaris-buttons">
+                        <img src="../assets/PREVTECH.png" class="idle" alt="prevtech">
+                        <img src="../assets/PREVVIC.png" class="focus" alt="prevvic">
+                    </a>
+                    <a href="E2.html" class="polaris-buttons">
+                        <img src="../assets/NEXTTECH.png" class="idle" alt="nexttech">
+                        <img src="../assets/NEXTVIC.png" class="focus" alt="nextvic">
+                    </a>
+                </div>
+                <p>Max's comment:</p>
+                <p>Already have some workflow stuff to make episodes faster, and I'm happy this one looks much better. Also Also, here's a <a href="https://www.youtube.com/watch?v=8YSMeFykdvU" target="_blank" id="commentlink">link</a> to the first day's theme song!</p>
+                <div Style="Height: 3vh;"></div>
+                <a id="comiclink" href="./E1">Link to top of page!</a>
+                <div Style="Height: 5vh;"></div>
+                <div class="polaris-footer">
+                     <p> This comic, inspired by the work of Sukeban Games, is licensed under <a id="comiclink" href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer">Attribution-NonCommercial 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"></a></p>
+                </div>
+            </div>
+        </div>
+    </body>
+
+<script>
+    function setVh() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    window.addEventListener('resize', setVh);
+    window.addEventListener('load', setVh);
+</script>
+
+<script>
+  const comicWrapper = document.querySelector('.comic-wrapper');
+  const back2index = document.querySelector('.back2index');
+  const logo = document.querySelector('.LOGO');
+
+  comicWrapper.addEventListener('scroll', () => {
+    const scrollThreshold = comicWrapper.scrollHeight * 0.002;
+
+    if (comicWrapper.scrollTop > scrollThreshold) {
+      back2index.classList.add('hide');
+      logo.classList.add('hide');
+    } else {
+      back2index.classList.remove('hide');
+      logo.classList.remove('hide');
+    }
+  });
+</script>
+
+
+</html>
