@@ -385,6 +385,56 @@ a, p, h1{
   height: 100%;
   left: 50%;
   transform: translateX(-50%); 
+  z-index: 1;
+}
+.castinner {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+.cast-flex{
+  position: absolute;
+  width: 33vh;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.cast-link {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+.cast-item {
+  height: calc(var(--vh, 1vh) * 75);
+  text-align: center;
+}
+.cast-item{
+  opacity: 0;
+}
+.cast-item:hover {
+  opacity: 1;
+}
+.cast-item:hover h1{
+  animation: shake 1s ease 0s 1 normal forwards;
+}
+#cast-vic{
+  margin-top: 20vh;
+  margin-left: 3vh;
+  margin-right: 0vh;
+}
+#cast-jack{
+  margin-top: 16vh;
+  margin-left: 0vh;
+  margin-right: 0vh;
+}
+#cast-beth{
+  margin-top: 10vh;
+  margin-left: 0vh;
+  margin-right: 0vh;
+  
 }
 
 
@@ -594,6 +644,37 @@ a, p, h1{
   50% {
     opacity: 0;
   }
+}
+@keyframes shake {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 50%;
+	}
+
+	10% {
+		transform: rotate(8deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(-10deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(10deg);
+	}
+
+	80% {
+		transform: rotate(-8deg);
+	}
+
+	90% {
+		transform: rotate(8deg);
+	}
 }
 
 
