@@ -1,75 +1,73 @@
+
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Style.css">
-  </head>
 
-  <body class="POLARIS">
 
-    <!--Header-->
-    <div class="back2index">
-        <a href="../PO1_AR-15.html"><img src="../assets/backtoindex.gif" alt="back2index"></a>
-    </div>
-    <div class="LOGO">
-        <img src="../assets/LOGO.png" alt="Logo">
-    </div>
-    
-    <!--Height Chart-->
-    <div class="cast-wrapper" id="cast-wrapper">
-      <div class="castinner">
-        <div class="cast-flex">
-          <a href="cast/Vic.html"  class="cast-link"><div class="cast-item" id="cast-vic">
-            <h1>Vic</h1>
-          </div></a>
-          <a href="cast/Jack.html" class="cast-link"><div class="cast-item" id="cast-jack">
-            <h1>Jack</h1>
-          </div></a>
-          <a href="cast/Beth.html" class="cast-link"><div class="cast-item" id="cast-beth">
-            <h1>Beth</h1>
-          </div></a>
+<head>
+    <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XCREW70GLD"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XCREW70GLD');
+      </script>
+   <!-- Google tag (gtag.js) -->
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="CastStyle.css">
+   <link rel="icon" href="but/Vic Char sheetAF2.jpg" type="image/x-icon"/>
+   <title>POLARIS</title>
+</head>
+
+<body>
+   <header id="top">
+      <nav> <ul>
+         <li><a href="./"><img src="but/LOGO.png" width="250"></a></li>
+         <li><a href="./Archive"><div class="twoimgs"><img class="img1" src="but/ARCHIVETECH.png" width="100"><img class="img2" src="but/ARCHIVEVIC.png" width="100"></div></a></li>
+         <li><a href="./About"><div class="twoimgs"><img class="img1" src="but/ABOUTTECH.png" width="100"><img class="img2" src="but/ABOUTVIC.png" width="100"></div></a></li>
+         <li><a href="./Cast"><div class="twoimgs"><img class="img1" src="but/CASTTECH.png" width="100"><img class="img2" src="but/CASTVIC.png" width="100"></div></a></li>
+         <li><a href="./Extra"><div class="twoimgs"><img class="img1" src="but/EXTRASTECH.png" width="100"><img class="img2" src="but/EXTRASVIC.png" width="100"></div></a></li>
+      </ul> </nav> 
+   </header>
+
+   <main>
+
+        <div class="image-container">
+            <img src="Cast/Polaris Height Chart Official.jpg">
+            <a href="./Cast/Vic" class="info-button" style="left: 37%; top: 30%;"></a>
+            <a href="./Cast/Jack" class="info-button" style="left: 45%; top: 28%;"></a>
+            <a href="./Cast/Beth" class="info-button" style="left: 55%; top: 25%;"></a>
         </div>
-      </div>
-      
-      <img src="Cast/Polaris Height Chart Official.jpg" class="castimage" alt="The official POLARIS height Chart">
-    </div>
+            
+   </main>
 
+     <script>
+        function centerImage() {
+            const imgContainer = document.querySelector('.image-container');
+            const img = imgContainer.querySelector('img');
+            imgContainer.scrollLeft = (img.offsetWidth - window.innerWidth) / 2;
+        }
 
-  </body>
+        window.addEventListener('load', centerImage);
+        window.addEventListener('resize', centerImage);
 
-<!--Script-->
-<script>
-function setVh() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
+        function adjustImageContainer() {
+            const header = document.querySelector('header');
+            const imgContainer = document.querySelector('.image-container');
+            const img = imgContainer.querySelector('img');
+            const headerHeight = header.offsetHeight;
 
-window.addEventListener('resize', setVh);
-window.addEventListener('load', setVh);
-</script>
+            imgContainer.style.top = headerHeight + 'px';
+            imgContainer.style.height = `calc(100vh - ${headerHeight}px)`;
 
-<script>
-  function centerCastInner() {
-    const wrapper = document.getElementById('cast-wrapper');
-    const inner = document.querySelector('.castinner');
+            imgContainer.scrollLeft = (img.offsetWidth - window.innerWidth) / 2;
+        }
 
-    const hasScrollbar = wrapper.scrollWidth > wrapper.clientWidth;
+        window.addEventListener('load', adjustImageContainer);
+        window.addEventListener('resize', adjustImageContainer);
+    </script>
 
-    if (hasScrollbar) {
-      const scrollPx = (wrapper.scrollWidth - wrapper.clientWidth) / 2;
-      wrapper.scrollLeft = scrollPx;
-      inner.style.transform = `translateX(${scrollPx}px)`;
-    } else {
-      inner.style.transform = 'none';
-    }
-  }
-
-  window.addEventListener('load', centerCastInner);
-  window.addEventListener('resize', centerCastInner);
-  window.addEventListener('orientationchange', () => {
-    setTimeout(centerCastInner, 100);
-  });
-</script>
-
+    
+</body>
 </html>
