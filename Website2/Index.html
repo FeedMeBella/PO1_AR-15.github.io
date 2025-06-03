@@ -32,7 +32,7 @@
         </div>
         <div class="button-row">
           <a href="Extras.html" class="half"><img src="./assets/Extras.png" alt="Button 2"></a>
-          <a href="https://maxisdreaming.tumblr.com/tagged/my%20art" target="_blank" class="half"><img src="./assets/tumblr.png" alt="Button 3"></a>
+          <a id="tumblr-link" href="https://maxisdreaming.tumblr.com/tagged/my%20art" target="_blank" class="half"><img src="./assets/tumblr.png" alt="Button 3"></a>
         </div>
         <div class="button-row">
           <a href="link2.html" class="half"><img src="./assets/button2.png" alt="Button 2"></a>
@@ -47,6 +47,22 @@
   <audio id="donaranha" src="sounds/donaranha.mp3" preload="auto"></audio>
 
 <!--Scripts-->
+
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const tumblrLink = document.getElementById('tumblr-link');
+
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // Force desktop view by using full Tumblr redirect URL (if available)
+      tumblrLink.href = "https://www.tumblr.com/blog/view/maxisdreaming/tagged/my%20art";
+    } else {
+      tumblrLink.href = "https://maxisdreaming.tumblr.com/tagged/my%20art";
+    }
+  });
+</script>
 
 <script>
   function setVh() {
