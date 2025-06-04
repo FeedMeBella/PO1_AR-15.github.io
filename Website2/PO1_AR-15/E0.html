@@ -71,7 +71,13 @@
     window.addEventListener('load', setVh);
 
     document.getElementById('go-back').addEventListener('click', () => {
-    history.back();
+        const referrer = document.referrer;
+
+        if (referrer && referrer.includes('vicbartends.com')) {
+            history.back();
+        } else {
+            window.location.href = 'https://vicbartends.com';
+        }
     });
 </script>
 
