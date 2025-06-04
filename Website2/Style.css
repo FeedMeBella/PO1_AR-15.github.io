@@ -514,16 +514,13 @@ a, p, h1, figcaption{
   overflow-y: visible;
   padding-bottom: 1%;
 }
-#link2top {
+#back2topcast {
   display: block;
   width: fit-content;
   margin: auto;
-  color: rgb(132, 148, 250);
-  font-size: large;
-  text-decoration: underline;
   padding-bottom: 2%;
 }
-#link2top:hover {
+#back2topcast:hover {
   color: rgb(178, 187, 243);
 }
 
