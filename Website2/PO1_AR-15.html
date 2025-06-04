@@ -9,7 +9,7 @@
     <body class="POLARIS">
         <!-- Header Button + Logo -->
         <div class="back2index">
-            <a href="./Index.html"><img src="./assets/backtoindex.gif" alt="back2index"></a>
+            <a href="#" id="go-back"><img src="./assets/backtoindex.gif" alt="back2index"></a>
         </div>
         <div class="LOGO">
             <img src="./assets/LOGO.png" alt="Logo">
@@ -79,6 +79,10 @@ function setVh() {
 
 window.addEventListener('resize', setVh);
 window.addEventListener('load', setVh);
+
+document.getElementById('go-back').addEventListener('click', () => {
+  history.back();
+});
 </script>
 
 </html>
