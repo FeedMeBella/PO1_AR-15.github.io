@@ -50,7 +50,7 @@
                 <p>Max's comment:</p>
                 <p>Already have some workflow stuff to make episodes faster, and I'm happy this one looks much better. Also Also, here's a <a href="https://www.youtube.com/watch?v=8YSMeFykdvU" target="_blank" id="commentlink">link</a> to the first day's theme song!</p>
                 <div Style="Height: 3vh;"></div>
-                <a id="comiclink" href="./E1">Link to top of page!</a>
+                <div id="back2top" class="back2top">Link to top of page!</div>
                 <div Style="Height: 5vh;"></div>
                 <div class="polaris-footer">
                      <p> This comic, inspired by the work of Sukeban Games, is licensed under <a id="comiclink" href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer">Attribution-NonCommercial 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"></a></p>
@@ -89,6 +89,10 @@
       logo.classList.remove('hide');
     }
   });
+
+  document.getElementById('back2top').addEventListener('click', function(e) {
+        comicWrapper.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 </script>
 
 
