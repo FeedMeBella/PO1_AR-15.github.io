@@ -214,7 +214,7 @@ a, p, h1, figcaption{
   left: 15%;
   bottom: calc(var(--vh, 1vh) * 17);
   width: 70vw;              
-  height: calc(var(--vh, 1vh) * 60);;
+  height: calc(var(--vh, 1vh) * 60);
   overflow-y: auto;
   overflow-x: hidden;                 
   white-space: nowrap;      
