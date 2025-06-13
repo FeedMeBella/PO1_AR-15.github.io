@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="Style.css">
+    </head>
+
+     <body class="About">
+        <div class="back2index">
+            <div id="go-back"><img src="assets/backtoindexyellow.gif" alt="back2index"></div>
+        </div>
+        <div class="LOGO" id="ABOUT-LOGO">
+            <img src="./assets/About LOGO.png"  alt="Logo">
+        </div>
+
+        <div class="BGSquares">
+        <div class="BGS1"></div>
+        <div class="BGS2"></div>
+        <div class="BGS3"></div>
+        <div class="BGS4"></div>
+        <div class="BGS5"></div>
+        <div class="BGS6"></div>
+        <div class="BGS7"></div>
+        <div class="BGS8"></div>
+        <div class="BGS9"></div>
+        <div class="BGS10"></div>
+        </div>
+
+    </body>
+
+<script>
+    function setVh() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    window.addEventListener('resize', setVh);
+    window.addEventListener('load', setVh);
+
+    document.getElementById('go-back').addEventListener('click', () => {
+        const referrer = document.referrer;
+
+        if (referrer && referrer.includes('vicbartends.com')) {
+            history.back();
+        } else {
+            window.location.href = 'https://vicbartends.com';
+        }
+    });
+</script>
+
+</html>
