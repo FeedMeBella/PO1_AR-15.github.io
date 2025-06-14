@@ -23,7 +23,7 @@ body.index {
               #d58332 90%,
               #d58332 100%);
 }
-a, p, h1, figcaption, em{
+a, p, h1, figcaption, em, li{
   text-decoration: none;
   font-family: "VA-11 Hall-A 6px Non-mono";
 }
@@ -625,14 +625,15 @@ a, p, h1, figcaption, em{
   z-index: 2;
 }
 .About-text{
-  padding-top: calc(var(--vh, 1vh) * 25);
+  padding-top: calc(var(--vh, 1vh) * 20);
   padding-right: 4.5%;
   padding-left: 4.5%;
-  flex: 1; 
 }
 .About-text h1{
+  display: block;
   color: #cb1168;
   font-weight: bolder;
+  text-align: center;
 }
 .About-text p{
   color: #541f26;
@@ -643,12 +644,31 @@ a, p, h1, figcaption, em{
   color: #684242;
   font-weight: normal;
 }
+.About-text li{
+  color: #87343f;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+.About-link{
+  color: #963333;
+  text-decoration: underline;
+}
+.About-link:hover{
+  color: #c35303;
+}
 .poem{
   display: block;
   text-align: center;
 }
-
-
+.ContactCredits{
+  display: block;
+  text-align: center;
+}
+.ContactCredits p{
+  margin: 1.5% 0%;
+}
 .BGS1, .BGS2, .BGS3, .BGS4, .BGS5,
 .BGS6, .BGS7, .BGS8, .BGS9, .BGS10 {
   position: fixed;
@@ -837,6 +857,13 @@ a, p, h1, figcaption, em{
   }
   .Extras-item {
     flex: 0 1 calc(53% - 2rem); /* 2 per row on smaller screens */
+  }
+
+  /* Tablet About*/
+  .About-text{
+  padding-top: calc(var(--vh, 1vh) * 15);
+  padding-right: 6%;
+  padding-left: 6%;
   }
 }
 
