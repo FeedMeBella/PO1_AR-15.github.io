@@ -1,94 +1,245 @@
+
 <!DOCTYPE html>
 
 <html>
-    <head>
+
+  <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="Style.css">
-    </head>
+  </head>
 
-    <body class="POLARIS">
-        <!-- Header Button + Logo -->
-        <div class="back2index">
-            <div id="go-back"><img src="assets/backtoindex.gif" alt="back2index"></div>
+  <body class="index">
+    <div id="loading">
+      <pre></pre>
+    </div>
+    <div class="right">
+        <img src="./assets/test.gif" alt="Bar">
+    </div>
+    <div class="left">
+        <img src="./assets/Website_bg.png" alt="planet">
+    </div>
+
+    <div class="space" id="space-bar">
+        <img src="./assets/sbaridle.png" class="idle" alt="space bar idle">
+        <img src="./assets/sbarhover.png" class="focus" alt="space bar hover">
+    </div>
+
+    <div class="phone-container" id="menu" >
+      <img src="./assets/Phone.png" id="phone" alt="menu">
+      <div class="button-container">
+        <div class="button-row">
+          <a href="PO1_AR-15.html" class="full-width"><img src="./assets/Polaris-button.png" alt="Button 1"></a>
         </div>
-        <div class="LOGO">
-            <img src="./assets/LOGO.png" alt="Logo">
+        <div class="button-row">
+          <a href="Extras.html" class="half"><img src="./assets/Extras.png" alt="Button 2"></a>
+          <a id="tumblr-link" href="https://maxisdreaming.tumblr.com/tagged/my%20art" target="_blank" class="half"><img src="./assets/tumblr.png" alt="Button 3"></a>
         </div>
-
-        <!-- Episode List -->
-        <div class="ep-container">
-            <a href="PO1_AR-15/E0.html" class="listed-episode">
-                <img src="PO1_AR-15/episodes/E0.jpg"/>
-                <div class="episode-info">
-                    <span>E0 - Intro</span>
-                    <span class="episode-date">7 / 2 / 2024</span>
-                    <span class="episode-date-mobile">7/2/2024</span>
-                </div>
-            </a>
-            <a href="PO1_AR-15/E1.html" class="listed-episode">
-                <img src="PO1_AR-15/episodes/E1.jpg" />
-                <div class="episode-info">
-                    <span>E1 - Room to Grow</span>
-                    <span class="episode-date">25 / 2 / 2024</span>
-                    <span class="episode-date-mobile">25/2/2024</span>
-                </div>
-            </a>
-            <a href="PO1_AR-15/E2.html" class="listed-episode">
-                <img src="PO1_AR-15/episodes/E2.jpg" />
-                <div class="episode-info">
-                    <span>E2 - The New Guy</span>
-                    <span class="episode-date">26 / 5 / 2024</span>
-                    <span class="episode-date-mobile">26/5/2024</span>
-                </div>
-            </a>
-            <a href="PO1_AR-15/E3.html" class="listed-episode">
-                <img src="PO1_AR-15/episodes/E3.jpg" />
-                <div class="episode-info">
-                    <span>E3 - Finnegan</span>
-                    <span class="episode-date">13 / 10 / 2024</span>
-                    <span class="episode-date-mobile">13/10/2024</span>
-                </div>
-            </a>
+        <div class="button-row">
+          <a href="link2.html" class="half"><img src="./assets/morewebsites.png" alt="Button 2"></a>
+          <a href="About.html" class="half"><img src="./assets/about.png" alt="Button 3"></a>
         </div>
+      </div>
+      <div id="snooze"></div>
+    </div>
+  </body>
+
+  <audio id="type-sound" src="sounds/typewriter.mp3" preload="auto"></audio>
+  <audio id="donaranha" src="sounds/vicpotenusa_atmos_thingy.mp3" preload="auto"></audio>
 
 
-         <!-- Footer Buttons -->
-        <div class="polaris-buttons-container">
-            <a href="PO1_AR-15/E0.html" class="polaris-buttons">
-                <img src="./assets/FIRSTTECH.png" class="idle" alt="firsttech">
-                <img src="./assets/FIRSTVIC.png" class="focus" alt="firstvic">
-            </a>
-            <a href="PO1_AR-15/Cast.html" class="polaris-buttons">
-                <img src="./assets/CCASTTECH.png" class="idle" alt="casttech">
-                <img src="./assets/CCASTVIC.png" class="focus" alt="castvic">
-            </a>
-            <a href="PO1_AR-15/E2.html" class="polaris-buttons">
-                <img src="./assets/LATESTTECH.png" class="idle" alt="latesttech">
-                <img src="./assets/LATESTVIC.png" class="focus" alt="latestvic">
-            </a>
-
-        </div>
-    </body>
-
-<!--Scripts-->
 <script>
-    function setVh() {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
+  window.addEventListener('DOMContentLoaded', () => {
+    const tumblrLink = document.getElementById('tumblr-link');
+
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      tumblrLink.href = "https://www.tumblr.com/maxisdreaming/tagged/my%20art";
+    } else {
+      tumblrLink.href = "https://maxisdreaming.tumblr.com/tagged/my%20art";
     }
+  });
+</script>
 
-    window.addEventListener('resize', setVh);
-    window.addEventListener('load', setVh);
+<script>
+  function setVh() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
 
-    document.getElementById('go-back').addEventListener('click', () => {
-        const referrer = document.referrer;
+  window.addEventListener('resize', setVh);
+  window.addEventListener('load', setVh);
+</script>
 
-        if (referrer && referrer.includes('vicbartends.com')) {
-            history.back();
-        } else {
-            window.location.href = 'https://vicbartends.com';
-        }
+<script>
+const text1 = "This is a loading screen";
+const text2 = "...";
+const text3 = "Wow, your internet is really slow...";
+const target = document.querySelector("#loading pre");
+const typeSound = document.getElementById("type-sound");
+
+let i1 = 0, i2 = 0, i3 = 0;
+let loadingFinished = false;
+let stopTyping = false;
+
+function playTypeSound() {
+  if (loadingFinished) return;
+  typeSound.currentTime = 0;
+  typeSound.play();
+}
+
+function paragraph() {
+  target.textContent += "\n";
+}
+
+function typeText1() {
+  if (stopTyping) return;
+  if (i1 < text1.length) {
+    target.textContent += text1.charAt(i1);
+    playTypeSound();
+    i1++;
+    setTimeout(typeText1, 130);
+  } else {
+    setTimeout(paragraph, 1000);
+    setTimeout(typeText2, 2000);
+  }
+}
+
+function typeText2() {
+  if (stopTyping) return;
+  if (i2 < text2.length) {
+    target.textContent += text2.charAt(i2);
+    playTypeSound();
+    i2++;
+    setTimeout(typeText2, 400);
+  } else {
+    setTimeout(paragraph, 3000);
+    setTimeout(typeText3, 4000);
+  }
+}
+
+function typeText3() {
+  if (stopTyping) return;
+  if (i3 < text3.length) {
+    target.textContent += text3.charAt(i3);
+    playTypeSound();
+    i3++;
+    setTimeout(typeText3, 100);
+  }
+}
+
+function onLoadingComplete() {
+  stopTyping = true;
+  loadingFinished = true;
+
+  const completeLine = document.createElement('span');
+  completeLine.textContent = "\nloading complete, press any key to enter";
+  completeLine.style.color = 'lightgreen';
+  completeLine.style.cursor = 'default';
+  completeLine.style.userSelect = 'none';
+
+  target.appendChild(completeLine);
+
+  const loader = document.getElementById("loading");
+  const BGmusic = document.getElementById("donaranha");
+
+
+ function proceed() {
+    loader.classList.add("hide");
+
+    BGmusic.play().catch(err => {
+      console.warn("Autoplay prevented:", err);
     });
+
+    window.addEventListener('blur', () => {
+       BGmusic.pause();
+    });
+
+    window.addEventListener('focus', () => {
+    if (loadingFinished && BGmusic.paused) {
+        BGmusic.play().catch(err => {
+          console.warn("Autoplay resume prevented:", err);
+        });
+      }
+    });
+
+    loader.addEventListener('transitionend', (e) => {
+      if (e.propertyName === "opacity") {
+        loader.remove();
+        startMenuLogic();
+      }
+    }, { once: true });
+
+    // Cleanup listeners
+    document.removeEventListener('keydown', keyListener);
+    loader.removeEventListener('click', clickListener);
+  }
+
+  function keyListener() {
+    proceed();
+  }
+
+  function clickListener() {
+    proceed();
+  }
+
+  document.addEventListener('keydown', keyListener);
+  loader.addEventListener('click', clickListener);
+}
+
+typeText1();
+
+window.addEventListener("load", () => {
+  onLoadingComplete();
+});
+
+function startMenuLogic() {
+  const button = document.getElementById('space-bar'); 
+  const snooze = document.getElementById('snooze'); 
+  const menu = document.getElementById('menu');
+
+  function activateMenu() {
+    menu.classList.remove('move-down');
+    menu.classList.add('move-up');
+    button.classList.add('hide');
+  }
+
+  function deactivateMenu() {
+    menu.classList.remove('move-up');
+    menu.classList.add('move-down');
+
+    setTimeout(() => {
+      button.classList.remove('hide');
+    }, 700);
+  }
+
+  setTimeout(() => {
+    if (!menu.classList.contains('move-up') && !menu.classList.contains('move-down')) {
+      activateMenu();
+    }
+  }, 10000);
+
+  button.addEventListener('click', () => {
+    activateMenu();
+  });
+
+  snooze.addEventListener('click', () => {
+    deactivateMenu();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space') {
+      event.preventDefault();
+
+      if (menu.classList.contains('move-up')) {
+        deactivateMenu();
+      } else {
+        activateMenu();
+      }
+    }
+  });
+}
+
 </script>
 
 </html>
