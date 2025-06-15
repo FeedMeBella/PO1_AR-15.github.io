@@ -50,6 +50,43 @@ a, p, h1, figcaption, em, li{
   bottom: 60%;
 }
 
+/* Text Bubble */
+
+.text-bubble {
+  position: fixed;
+  top: 23%;
+  right: 40%;
+  z-index: 2;
+}
+.bubble-wrapper {
+  position: relative;
+  height: 11vw;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bubble-wrapper img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+.bubble-wrapper p {
+  position: absolute;
+  width: 70%;
+  color: rgb(255, 255, 255);
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0%;
+  z-index: 3;
+}
+#textBubble {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
 /* Background */
 .right{
     position: fixed;
@@ -71,7 +108,6 @@ a, p, h1, figcaption, em, li{
     overflow: hidden;
     padding: 0px;
     height: calc(var(--vh, 1vh) * 100);
-
 }
 .left img{
     height: 100%;
@@ -92,7 +128,6 @@ a, p, h1, figcaption, em, li{
   bottom: 0%;
   z-index: 4;
   cursor: pointer;
-
 }
 .space img {
    position: absolute;
@@ -101,7 +136,6 @@ a, p, h1, figcaption, em, li{
    width: calc(100vh * 0.568518);
    height: auto;
    opacity: 0.4;
-    
 }
 .focus{
   opacity: 0;
@@ -916,6 +950,7 @@ a, p, h1, figcaption, em, li{
   visibility: hidden;
   opacity: 0;
 }
+
 
 @keyframes move-up {
   from {
