@@ -55,12 +55,12 @@ a, p, h1, figcaption, em, li{
 .text-bubble {
   position: fixed;
   top: 23%;
-  right: 40%;
+  right: 35%;
   z-index: 2;
 }
 .bubble-wrapper {
   position: relative;
-  height: 11vw;
+  height: 18vh;
   width: auto;
   display: flex;
   align-items: center;
@@ -84,6 +84,9 @@ a, p, h1, figcaption, em, li{
 #textBubble {
   opacity: 0;
   pointer-events: none;
+}
+#mobile-bubble{
+  display: none;
 }
 
 
@@ -803,12 +806,16 @@ a, p, h1, figcaption, em, li{
 
   /* Tablet Text Bubble */
   .text-bubble {
-  top: 10%;
-  right: 3%;
-}
-.bubble-wrapper {
-  height: 25vw;
-}
+    position: relative;
+    top: 5%;
+    right: auto;
+    margin: 0 auto;
+  }
+  .bubble-wrapper {
+    height: 15vh;
+  }
+
+
   /* Tablet episode listing */
   .LOGO{
     right: 0%;
@@ -913,6 +920,21 @@ a, p, h1, figcaption, em, li{
   #phone {
     width: 100%;
   }
+
+  /* Mobile Text Bubble */
+  #desktop-bubble{
+    display: none;
+  }
+  #mobile-bubble{
+    display: block;
+  }
+  .bubble-wrapper {
+    height: 45vw;
+  }
+  .bubble-wrapper p {
+  width: 85%;
+  margin-bottom: 9%;
+}
 
   /* Mobile episodes */
   .LOGO{
