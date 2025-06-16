@@ -34,6 +34,11 @@
       </div>
     </div>
 
+    <div class="ads">
+      <img src="assets/Burgertown.gif" alt="Burgertown">
+      <img src="assets/Arson.gif" alt="Arson">
+    </div>
+
     <div class="phone-container" id="menu" >
       <img src="./assets/Phone.png" id="phone" alt="menu">
       <div class="button-container">
@@ -80,6 +85,7 @@
   window.addEventListener('resize', setVh);
   window.addEventListener('load', setVh);
 </script>
+
 
 <script>
 const text1 = "This is a loading screen";
@@ -284,7 +290,66 @@ function startMenuLogic() {
   }
  });
 }
+</script>
 
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const adsContainer = document.querySelector('.ads');
+    const adImages = adsContainer.querySelectorAll('img');
+
+    adImages.forEach(img => img.style.display = 'none');
+
+    function showRandomAd() {
+      adImages.forEach(img => img.style.display = 'none');
+      adsContainer.classList.remove('animate__animated', 'animate__heartBeat');
+
+      const delay = Math.random() * 50000 + 5000;
+      setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * adImages.length);
+        const chosenImage = adImages[randomIndex];
+        chosenImage.style.display = 'block';
+
+      chosenImage.onload = () => {
+          setTimeout(() => {
+            const isPortrait = window.matchMedia("(max-aspect-ratio: 1)").matches;
+
+            const rect = adsContainer.getBoundingClientRect();
+            const imgHeight = rect.height;
+            const imgWidth = rect.width;
+
+            const maxTopPx = Math.max(0, window.innerHeight - imgHeight);
+            const randomTopPx = Math.random() * maxTopPx;
+            const randomTopVH = (randomTopPx / window.innerHeight) * 100;
+
+            adsContainer.style.top = `${randomTopVH}vh`;
+
+            if (!isPortrait) {
+              const maxLeftPx = Math.max(0, window.innerWidth - imgWidth);
+              const randomLeftPx = Math.random() * maxLeftPx;
+              const randomLeftVW = (randomLeftPx / window.innerWidth) * 100;
+
+              adsContainer.style.left = `${randomLeftVW}vw`;
+            } else {
+              adsContainer.style.left = `0`;
+            }
+
+            adsContainer.classList.add('animate__animated', 'animate__heartBeat');
+          }, 50);
+        };
+
+        if (chosenImage.complete) chosenImage.onload();
+
+
+        adsContainer.onclick = () => {
+          adsContainer.style.display = 'none';
+          showRandomAd();
+        };
+
+        adsContainer.style.display = 'block';
+      }, delay);
+    }
+    showRandomAd(); 
+  });
 </script>
 
 <script>
