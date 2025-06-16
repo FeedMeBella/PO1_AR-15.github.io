@@ -70,11 +70,18 @@
     document.getElementById('go-back').addEventListener('click', () => {
         const referrer = document.referrer;
 
-        if (referrer && referrer.includes('vicbartends.com')) {
-            history.back();
-        } else {
-            window.location.href = 'https://vicbartends.com';
-        }
+        if (referrer.includes('vicbartends.com')) {
+            const url = new URL(referrer);
+            const path = url.pathname;
+
+            if (/^\/PO1_AR-15\/EX\d+/.test(path)) {
+                window.location.href = 'https://www.vicbartends.com/PO1_AR-15';
+            } else if (path === '/PO1_AR-15') {
+                history.back();
+            }
+            } else {
+            window.location.href = 'https://www.vicbartends.com';
+            }
     });
 </script>
 
