@@ -51,7 +51,6 @@ a, p, h1, figcaption, em, li{
 }
 
 /* Text Bubble */
-
 .text-bubble {
   position: fixed;
   top: 23%;
@@ -116,11 +115,18 @@ a, p, h1, figcaption, em, li{
     height: 100%;
     transition: transform 0.5s ease, height 0.5s ease;
 }
-.right img{
+.bar{
     position: absolute;
     bottom: 0;
     right: 0;
     height: 100%;
+    transition: transform 0.5s ease, height 0.5s ease;
+}
+.bartender{
+    position: absolute;
+    bottom: 32.7%;
+    right: 20vh;
+    height: 40%;
     transition: transform 0.5s ease, height 0.5s ease;
 }
 
@@ -780,15 +786,16 @@ a, p, h1, figcaption, em, li{
   #loading pre{
   left: 1%;
   bottom: 50%;
-}
-  .right img {
-      position: absolute;
+  }
+  .bar {
       transform: translateX(5%);
       height: 65%;
-      bottom: 0px;
-      right: 0px;
-      transition: height 0.5s ease;
   }
+  .bartender{
+    bottom: 21.25%;
+    right: 7vh;
+    height: 30%;
+}
   .left img {
       transform: translateX(-7%);
       height: 100%;
