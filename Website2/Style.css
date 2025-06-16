@@ -88,6 +88,17 @@ a, p, h1, figcaption, em, li{
   display: none;
 }
 
+/* Ads */
+.ads{
+  position: fixed;
+  width: 40vw;
+  height: auto;
+  z-index: 999;
+  box-sizing: border-box;
+}
+.ads img{
+  width: 100%;
+}
 
 /* Background */
 .right{
@@ -811,6 +822,10 @@ a, p, h1, figcaption, em, li{
     transform: translateX(-15%);
   }
 
+  /* Tablet Ads */
+  .ads{
+  width: 100%;
+}
   /* Tablet Text Bubble */
   .text-bubble {
     position: relative;
