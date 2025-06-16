@@ -68,32 +68,13 @@
     window.addEventListener('load', setVh);
 
     window.addEventListener('DOMContentLoaded', () => {
-    const goBackBtn = document.getElementById('go-back');
+        const goBackBtn = document.getElementById('go-back');
+        if (!goBackBtn) return;
 
-    goBackBtn.addEventListener('click', () => {
-        const referrer = document.referrer;
-
-        if (referrer.includes('vicbartends.com')) {
-        try {
-            const url = new URL(referrer);
-            const path = url.pathname;
-
-            if (/^\/PO1_AR-15\/EX\d+/.test(path)) {
-            window.location.href = 'https://www.vicbartends.com/PO1_AR-15';
-            } else if (path === '/PO1_AR-15') {
-            history.back();
-            } else {
-            window.location.href = 'https://www.vicbartends.com';
-            }
-        } catch {
-            // fallback if referrer URL is invalid
-            window.location.href = 'https://www.vicbartends.com';
-        }
-        } else {
-        window.location.href = 'https://www.vicbartends.com';
-        }
+        goBackBtn.addEventListener('click', () => {
+            window.location.href = 'https://www.vicbartends.com/PO1_AR-15.html';
+        });
     });
-});
 </script>
 
 <script>
