@@ -92,35 +92,43 @@
 </script>
 
 <script>
-    let adTimeout; 
-    const adsContainer = document.querySelector('.ads');
-    const adImages = adsContainer.querySelectorAll('img');
-    const overlay = document.querySelector('.ad-filter');
+  let adTimeout; 
+  const adsContainer = document.querySelector('.ads');
+  const adImages = adsContainer.querySelectorAll('img');
+  const overlay = document.querySelector('.ad-filter');
 
-    function showRandomAd() {
-      const delay = Math.random() * 30000 + 5000;
+  function showRandomAd() {
+    clearTimeout(adTimeout);
 
-      setTimeout(() => {
-        const randomIndex = Math.floor(Math.random() * adImages.length);
-        const chosenImage = adImages[randomIndex];
+    const delay = Math.random() * 60000 + 5000;
 
-        chosenImage.style.display = 'block';
-        overlay.style.display = 'block';
+    adTimeout = setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * adImages.length);
+      const chosenImage = adImages[randomIndex];
 
-        chosenImage.onclick = () => {
-          chosenImage.style.display = 'none';
-          overlay.style.display = 'none';
+      chosenImage.style.display = 'block';
+      overlay.style.display = 'block';
 
-          showRandomAd();
-        };
-      }, delay);
+      chosenImage.onclick = () => {
+        chosenImage.style.display = 'none';
+        overlay.style.display = 'none';
+
+        showRandomAd();
+      };
+    }, delay);
+  }
+
+  window.addEventListener('DOMContentLoaded', showRandomAd);
+
+  window.addEventListener('pagehide', () => {
+    clearTimeout(adTimeout);
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      clearTimeout(adTimeout);
     }
-
-    window.addEventListener('DOMContentLoaded', showRandomAd);
-
-    window.addEventListener('pagehide', () => {
-        clearTimeout(adTimeout);
-    });
+  });
 </script>
 
 <script>
