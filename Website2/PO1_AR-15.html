@@ -100,7 +100,7 @@
 </script>
 
 <script>
-  window.addEventListener('DOMContentLoaded', () => {
+    let adTimeout; 
     const adsContainer = document.querySelector('.ads');
     const adImages = adsContainer.querySelectorAll('img');
     const overlay = document.querySelector('.ad-filter');
@@ -124,8 +124,11 @@
       }, delay);
     }
 
-    showRandomAd();
-  });
+    window.addEventListener('DOMContentLoaded', showRandomAd);
+
+    window.addEventListener('pagehide', () => {
+        clearTimeout(adTimeout);
+    });
 </script>
 
 </html>

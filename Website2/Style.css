@@ -146,6 +146,14 @@ a, p, h1, figcaption, em, li{
     height: 100%;
     transition: transform 0.5s ease, height 0.5s ease;
 }
+.bar_shadow{
+    position: absolute;
+    bottom: 0;
+    right: 90vh;
+    height: 30%;
+    transition: transform 0.5s ease, height 0.5s ease;
+    opacity: 0.6;
+}
 .bartender{
     position: absolute;
     bottom: 32.7%;
@@ -815,11 +823,15 @@ a, p, h1, figcaption, em, li{
       transform: translateX(5%);
       height: 65%;
   }
+  .bar_shadow{
+    right: 40vh;
+    height: 30%;
+  }
   .bartender{
     bottom: 21.25%;
     right: 7vh;
     height: 25%;
-}
+  }
   .left img {
       transform: translateX(-7%);
       height: 100%;

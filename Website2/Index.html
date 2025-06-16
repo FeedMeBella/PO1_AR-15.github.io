@@ -14,11 +14,12 @@
       <pre></pre>
     </div>
     <div class="right">
-        <img class="bar" src="./assets/test.gif" alt="Bar">
+        <img class="bar_shadow" src="./assets/bar_shadow.png" alt="Bar Shadow Cus Gifs dont do low opacity">
+        <img class="bar" src="./assets/bar.gif" alt="Bar">
         <img class="bartender" src="./assets/VicGif.gif" alt="Bartender">
     </div>
     <div class="left">
-        <img src="./assets/Website_bg.png" alt="planet">
+        <img src="./assets/Roberta.png" alt="planet">
     </div>
 
     <div class="space" id="space-bar">
@@ -91,13 +92,13 @@
 </script>
 
 <script>
-  window.addEventListener('DOMContentLoaded', () => {
+    let adTimeout; 
     const adsContainer = document.querySelector('.ads');
     const adImages = adsContainer.querySelectorAll('img');
     const overlay = document.querySelector('.ad-filter');
 
     function showRandomAd() {
-      const delay = Math.random() * 20000 + 5000;
+      const delay = Math.random() * 30000 + 5000;
 
       setTimeout(() => {
         const randomIndex = Math.floor(Math.random() * adImages.length);
@@ -115,8 +116,11 @@
       }, delay);
     }
 
-    showRandomAd();
-  });
+    window.addEventListener('DOMContentLoaded', showRandomAd);
+
+    window.addEventListener('pagehide', () => {
+        clearTimeout(adTimeout);
+    });
 </script>
 
 <script>
