@@ -4,6 +4,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   </head>
 
   <body class="POLARIS">
@@ -15,7 +16,15 @@
     <div class="LOGO">
         <img src="../assets/LOGO.png" alt="Logo">
     </div>
-    
+
+
+    <div class="ad-filter"></div>
+
+    <div class="ads">
+      <img src="../assets/Burgertown.gif" alt="Burgertown">
+      <img src="../assets/Arson.gif" alt="Arson">
+    </div>
+
     <!--Height Chart-->
     <div class="cast-wrapper" id="cast-wrapper">
       <div class="castinner">
@@ -83,5 +92,35 @@
     setTimeout(centerCastInner, 300);
   });
 </script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const adsContainer = document.querySelector('.ads');
+    const adImages = adsContainer.querySelectorAll('img');
+    const overlay = document.querySelector('.ad-filter');
+
+    function showRandomAd() {
+      const delay = Math.random() * 20000 + 2000;
+
+      setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * adImages.length);
+        const chosenImage = adImages[randomIndex];
+
+        chosenImage.style.display = 'block';
+        overlay.style.display = 'block';
+
+        chosenImage.onclick = () => {
+          chosenImage.style.display = 'none';
+          overlay.style.display = 'none';
+
+          showRandomAd();
+        };
+      }, delay);
+    }
+
+    showRandomAd();
+  });
+</script>
+
 
 </html>
