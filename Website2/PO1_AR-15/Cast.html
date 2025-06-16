@@ -126,9 +126,11 @@
     clearTimeout(adTimeout);
   });
 
-  document.addEventListener('visibilitychange', () => {
+   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       clearTimeout(adTimeout);
+    } else {
+      showRandomAd();
     }
   });
 </script>
