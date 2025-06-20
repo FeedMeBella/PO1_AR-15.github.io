@@ -30,7 +30,7 @@
     <div class="text-bubble" id="textBubble">
       <div class=" bubble-wrapper">
         <img src="./assets/TextBubbleDesk.gif" id="desktop-bubble" alt="TextBubble">
-        <img src="./assets/TextBubbleTablet.gif" id="mobile-bubble" alt="TextBubble">
+        <img src="./assets/TextBubbleTablet.gif" id="mobile-bubble" alt="TextBubbleMobile">
         <p id="bubbleText">Loading...</p>
       </div>
     </div>
@@ -48,15 +48,15 @@
       <img src="./assets/Phone.png" id="phone" alt="menu">
       <div class="button-container">
         <div class="button-row">
-          <a href="PO1_AR-15.html" class="full-width"><img src="./assets/Polaris-button.png" alt="Button 1"></a>
+          <a href="PO1_AR-15.html" class="full-width"><img src="./assets/Polaris-button.png" alt="Polaris-button"></a>
         </div>
         <div class="button-row">
-          <a href="Extras.html" class="half"><img src="./assets/Extras.png" alt="Button 2"></a>
-          <a id="tumblr-link" href="https://maxisdreaming.tumblr.com/tagged/my%20art" target="_blank" class="half"><img src="./assets/tumblr.png" alt="Button 3"></a>
+          <a href="Extras.html" class="half"><img src="./assets/Extras.png" alt="Extras-button"></a>
+          <a id="tumblr-link" href="https://maxisdreaming.tumblr.com/tagged/my%20art" target="_blank" class="half"><img src="./assets/tumblr.png" alt="Tumblr-button"></a>
         </div>
         <div class="button-row">
-          <a href="link2.html" class="half"><img src="./assets/morewebsites.png" alt="Button 2"></a>
-          <a href="About.html" class="half"><img src="./assets/about.png" alt="Button 3"></a>
+          <a href="Hotlinks.html" class="half"><img src="./assets/morewebsites.png" alt="Hotlinks-button"></a>
+          <a href="About.html" class="half"><img src="./assets/about.png" alt="About-button"></a>
         </div>
       </div>
       <div id="snooze"></div>
@@ -271,6 +271,7 @@ function startMenuLogic() {
   const menu = document.getElementById('menu');
   const textBubble = document.getElementById('textBubble');
   const bubbleText = document.getElementById('bubbleText');
+  const bartender = document.querySelector('.bartender');
 
   function hideTextBubble() {
   if (!bubbleHasAppeared) return;
@@ -306,7 +307,7 @@ function startMenuLogic() {
       button.classList.remove('hide');
     }, 700);
   }
-
+  bartender.addEventListener('click', hideTextBubble);
   setTimeout(() => {
     if (!menu.classList.contains('move-up') && !menu.classList.contains('move-down')) {
       activateMenu();
@@ -335,6 +336,7 @@ function startMenuLogic() {
     }
   }
  });
+ 
 }
 </script>
 
