@@ -59,11 +59,12 @@ a, p, h1, figcaption, em, li{
 }
 .bubble-wrapper {
   position: relative;
-  height: 18vh;
+  height: 24vh;
   width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: textfloat 2s steps(1, end) infinite;
 }
 .bubble-wrapper img {
   height: 100%;
@@ -73,11 +74,11 @@ a, p, h1, figcaption, em, li{
 .bubble-wrapper p {
   position: absolute;
   width: 70%;
-  color: rgb(255, 255, 255);
+  color: rgb(70, 69, 69);
   font-size: large;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 0%;
+  margin-bottom: 6%;
   z-index: 3;
 }
 #textBubble {
@@ -858,6 +859,12 @@ a, p, h1, figcaption, em, li{
     width: 100%;
   }
   /* Tablet Text Bubble */
+  #desktop-bubble{
+    display: none;
+  }
+  #mobile-bubble{
+    display: block;
+  }
   .text-bubble {
     position: relative;
     top: 5%;
@@ -865,8 +872,13 @@ a, p, h1, figcaption, em, li{
     margin: 0 auto;
   }
   .bubble-wrapper {
-    height: 15vh;
+   height: 25vh;
   }
+  .bubble-wrapper p {
+  width: 50vh;
+  margin-bottom: 4%;
+  }
+
 
 
   /* Tablet episode listing */
@@ -979,19 +991,15 @@ a, p, h1, figcaption, em, li{
     top: 30%;
   }
   /* Mobile Text Bubble */
-  #desktop-bubble{
-    display: none;
-  }
-  #mobile-bubble{
-    display: block;
-  }
   .bubble-wrapper {
-    height: 45vw;
+    height: 40vw;
   }
   .bubble-wrapper p {
   width: 85%;
   margin-bottom: 9%;
-}
+  margin-left: 5%;
+  font-size: 5vw;
+  }
 
   /* Mobile episodes */
   .LOGO{
@@ -1113,6 +1121,11 @@ a, p, h1, figcaption, em, li{
   70% {
     transform: translateX(-50%) scale(1);
   }
+}
+@keyframes textfloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-1%); }
+  100% { transform: translateY(0); }
 }
 
 
