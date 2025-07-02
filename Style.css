@@ -954,13 +954,13 @@ a, p, h1, figcaption, em, li{
   }
   #bartenderVic{
     bottom: 19%;
-    right: 6.4vh;
-    height: 30%;
+    right: calc(var(--vh, 1vh) * 6.4);
+    height: 28%;
   }
   #bartenderLyria{
-    bottom: 18.7%;
-    right: 4.7vh;
-    height: 30%;
+    bottom: 18.8%;
+    right: calc(var(--vh, 1vh) * 4.9);
+    height: 28%;
   }
   .left img {
       transform: translateX(-7%);
