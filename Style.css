@@ -155,11 +155,18 @@ a, p, h1, figcaption, em, li{
     transition: transform 0.5s ease, height 0.5s ease;
     opacity: 0.6;
 }
-.bartender{
+#bartenderVic{
     position: absolute;
-    bottom: 32.7%;
-    right: 20vh;
-    height: 37%;
+    bottom: 29.4%;
+    right: 19vh;
+    height: 43%;
+    transition: transform 0.5s ease, height 0.5s ease;
+}
+#bartenderLyria{
+    position: absolute;
+    bottom: 28.9%;
+    right: 17vh;
+    height: 43%;
     transition: transform 0.5s ease, height 0.5s ease;
 }
 
@@ -945,10 +952,15 @@ a, p, h1, figcaption, em, li{
     right: 40vh;
     height: 30%;
   }
-  .bartender{
-    bottom: 21.25%;
-    right: 7vh;
-    height: 25%;
+  #bartenderVic{
+    bottom: 19%;
+    right: 6.4vh;
+    height: 30%;
+  }
+  #bartenderLyria{
+    bottom: 18.7%;
+    right: 4.9vh;
+    height: 30%;
   }
   .left img {
       transform: translateX(-7%);
