@@ -10,6 +10,13 @@
     font-display: swap;
 }
 
+@font-face {
+  font-family: 'Bradley Hand';
+  src: url('font/BradleyHandITCTT-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 body, html {
     margin:0;
     padding:0;
