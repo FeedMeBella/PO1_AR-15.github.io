@@ -52,8 +52,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="maxisdreaming@vicbartends.com" rel="me">
     <link href="https://github.com/FeedMeBella" rel="me">
-
-    <link href="https://fonts.cdnfonts.com/css/bradley-hand-2" rel="stylesheet">
   </head>
 
   <body class="index">
@@ -195,13 +193,9 @@
 
   const messagesLyria = [
     "Hiya! Did ya sleep well?",
-    "Orly is a dumb traitor.",
-    "Vic asked me to tell you that the key is ORANGES.",
-    "Hey! Can you get me off this rock?",
-    "Je ne connais pas le français, aidez-moi.",
-    "How the hell did I end up here?!",
-    "Vic said she needed to see a 'Crimson Rose', whatever that means...",
-    "The drinks here are not half bad..."
+    "Dumb traitor.",
+    "Oh yeah, the key is ORANGES!",
+    "Katy looked like fun.",
   ];
 
   let messages = [];
@@ -212,7 +206,7 @@
   const desktopBubble = document.getElementById("desktop-bubble");
   const mobileBubble = document.getElementById("mobile-bubble");
   const bubbleText = document.getElementById("bubbleText");
-  const bubbleParagraph = document.querySelector('textBubble p');
+  const bubbleParagraph = document.querySelector("#textBubble p");
 
   const vicDesktopBubbleSrc = desktopBubble.src;
   const vicMobileBubbleSrc = mobileBubble.src;
@@ -239,7 +233,7 @@
       mobileBubble.src = lyriaMobileBubbleSrc;
       messages = [...messagesLyria];
 
-      bubbleParagraph.style.fontFamily = "'Bradley Hand', sans-serif";
+      bubbleParagraph.style.fontFamily = "'Bradley Hand', cursive";
       bubbleText.textContent = getRandomMessage(bubbleText.textContent);
 
 
