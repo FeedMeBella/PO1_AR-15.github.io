@@ -52,6 +52,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="maxisdreaming@vicbartends.com" rel="me">
     <link href="https://github.com/FeedMeBella" rel="me">
+
+    <link href="https://fonts.cdnfonts.com/css/bradley-hand-2" rel="stylesheet">
   </head>
 
   <body class="index">
@@ -237,7 +239,7 @@
       mobileBubble.src = lyriaMobileBubbleSrc;
       messages = [...messagesLyria];
 
-      bubbleParagraph.style.setProperty('font-family','"Bradley Hand ITC", "Bradley Hand", cursive');
+      bubbleParagraph.style.fontFamily = "'Bradley Hand', sans-serif";
       bubbleText.textContent = getRandomMessage(bubbleText.textContent);
 
 
